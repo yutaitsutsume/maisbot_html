@@ -3,82 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>機能・コマンド | お助け！マイスちゃんbot！</title>
+    <title>お助け！マイスちゃんbot！公式サイト</title>
     <style>
+        /* 五目夕太さんの美学を反映したダークテーマ */
         body {
-            background-color: #121212;
-            color: #e0e0e0;
-            font-family: sans-serif;
-            line-height: 1.6;
+            background-color: #000000;
+            color: #ffffff;
+            font-family: "Hiragino Mincho ProN", "MS Mincho", serif;
+            line-height: 1.8;
             margin: 0;
+            padding: 0;
         }
-        nav {
-            background: #1a1a1a;
-            padding: 12px;
+        header {
+            background-color: #ffffff;
+            padding: 40px 20px;
             text-align: center;
             border-bottom: 1px solid #333;
         }
+        nav {
+            position: sticky;
+            top: 0;
+            background: #1a1a1a;
+            padding: 10px;
+            text-align: center;
+            border-bottom: 1px solid #444;
+            z-index: 100;
+        }
         nav a {
-            color: #bbb;
+            color: #aaa;
             text-decoration: none;
             margin: 0 15px;
+            font-size: 0.9em;
         }
+        nav a:hover { color: #fff; }
         .container { max-width: 800px; margin: auto; padding: 40px 20px; }
-        h1 { border-bottom: 2px solid #5865F2; padding-bottom: 10px; }
-        .command-item {
-            background: #1e1e1e;
-            padding: 20px;
+        section { margin-bottom: 60px; scroll-margin-top: 60px; }
+        h1, h2 { color: #ffffff; border-left: 4px solid #fff; padding-left: 15px; }
+        .command-box { background: #1e1e1e; padding: 15px; border-radius: 5px; margin-bottom: 10px; border: 1px solid #333; }
+        .btn-invite {
+            display: inline-block;
+            background: #5865F2;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
             border-radius: 5px;
-            margin-bottom: 20px;
-            border: 1px solid #333;
-        }
-        .command-name {
-            color: #5865F2;
-            font-family: monospace;
-            font-size: 1.2em;
-            display: block;
-            margin-bottom: 10px;
+            font-weight: bold;
+            margin-top: 20px;
+
+
+
+
+
+
+
         }
         footer { text-align: center; padding: 20px; color: #666; font-size: 0.8em; }
     </style>
 </head>
 <body>
 
+<header>
+    <h1>お助け！マイスちゃんbot！公式サイト</h1>
+    <p>マイスちゃんがあなたの手助けをします！みんなが使えて安心の多機能botを目指してます！</p>
+</header>
+
 <nav>
-    <a href="index.html">ホーム</a>
-    <a href="commands.html">機能・コマンド</a>
-    <a href="terms.html">規約・ポリシー</a>
-    <a href="support.html">サポート</a>
+    <a href="#features">機能</a>
+    <a href="#commands">コマンド</a>
+    <a href="#terms">規約</a>
+    <a href="#support">サポート</a>
+    <a href="#invite">招待</a>
 </nav>
 
 <div class="container">
-    <h1>機能・コマンド一覧</h1>
-    <p>マイスちゃんbotで利用可能な主要コマンドの解説です。</p>
+    <!-- 機能・紹介 -->
+    <section id="features">
+        <h2>📌 Botの概要</h2>
+        <p>計算、画像処理、そして日常の些細な「お清め」を詳らかにサポートするDiscord Botです。</p>
+    </section>
 
-    <div class="command-item">
-        <span class="command-name">/calc [数式]</span>
-        <p>入力された数式の計算結果を表示します。Pythonの計算ライブラリを使用しており、安全かつ正確な処理が可能です。</p>
-    </div>
+    <!-- コマンド一覧 -->
+    <section id="commands">
+        <h2>🛠 主要コマンド</h2>
+        <div class="command-box"><strong>/calc</strong> : 独自の計算ロジックによる数式評価。</div>
+        <div class="command-box"><strong>/seisei</strong> : 画像生成および加工（内部IDによる管理）。</div>
+        <div class="command-box"><strong>/solt</strong> : 右クリックメニューから即座にお清めを実行。</div>
+        <div class="command-box"><strong>/koneta</strong> : 開発秘話やシュールな独り言をランダムに表示。</div>
+    </section>
 
-    <div class="command-item">
-        <span class="command-name">/seisei [キーワード]</span>
-        <p>指定された条件に基づいた画像生成、または加工を行います。生成されたデータは内部IDによって管理されます。</p>
-    </div>
+    <!-- 利用規約・プライバシーポリシー -->
+    <section id="terms">
+        <h2>⚖ 利用規約 & ポリシー</h2>
+        <h3>利用規約</h3>
+        <p>本Botの利用は自己責任とします。不適切な使用により発生した損害について、開発者は詳らかに免責されるものとします。</p>
+        <h3>プライバシーポリシー</h3>
+        <p>本Botは、サービスの提供に必要な最小限のデータ（ユーザーID等）を除き、個人を特定できる情報を執拗に収集することはありません。</p>
+    </section>
 
-    <div class="command-item">
-        <span class="command-name">/solt</span>
-        <p>対象に対して「お清め」を実行するユーモア機能です。コンテキストメニュー（右クリック）からも利用できます。</p>
-    </div>
+    <!-- サポート・メンバー -->
+    <section id="support">
+        <h2>👥 サポート & 開発メンバー</h2>
+        <p>開発・運営：<strong>五目夕太 (㐅メ夕タ)</strong></p>
+        <p>不具合報告や要望は、GitHubのリポジトリまたは指定の窓口まで詳らかにご連絡ください。</p>
+    </section>
 
-    <div class="command-item">
-        <span class="command-name">/koneta</span>
-        <p>開発にまつわるエピソードや、ランダムなテキストを表示します。</p>
-    </div>
+    <!-- 招待リンク -->
+    <section id="invite" style="text-align: center;">
+        <h2>🚀 Botをサーバーに迎える</h2>
+        <p>あなたのサーバーに「㐅メ夕タ」を招待しましょう。</p>
+        <a href="https://discord.com/oauth2/authorize?client_id=1477164306285068370&permissions=8&integration_type=0&scope=bot" class="btn-invite">Discordサーバーに追加する</a>
+    </section>
 </div>
 
 <footer>
-    &copy; 2026 五目夕太 (Itsutsume Yuta)
+    &copy; 2026 五目夕太 (Itsutsume Yuta) - All Rights Reserved.
 </footer>
 
 </body>
-</html>
