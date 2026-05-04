@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>機能・コマンド | お助け！マイスちゃんbot！</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+            font-family: sans-serif;
+            line-height: 1.6;
+            margin: 0;
+        }
+        nav {
+            background: #1a1a1a;
+            padding: 12px;
+            text-align: center;
+            border-bottom: 1px solid #333;
+        }
+        nav a {
+            color: #bbb;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        .container { max-width: 800px; margin: auto; padding: 40px 20px; }
+        h1 { border-bottom: 2px solid #5865F2; padding-bottom: 10px; }
+        .command-item {
+            background: #1e1e1e;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border: 1px solid #333;
+        }
+        .command-name {
+            color: #5865F2;
+            font-family: monospace;
+            font-size: 1.2em;
+            display: block;
+            margin-bottom: 10px;
+        }
+        footer { text-align: center; padding: 20px; color: #666; font-size: 0.8em; }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="index.html">ホーム</a>
+    <a href="commands.html">機能・コマンド</a>
+    <a href="terms.html">規約・ポリシー</a>
+    <a href="support.html">サポート</a>
+</nav>
+
+<div class="container">
+    <h1>機能・コマンド一覧</h1>
+    <p>マイスちゃんbotで利用可能な主要コマンドの解説です。</p>
+
+    <div class="command-item">
+        <span class="command-name">/calc [数式]</span>
+        <p>入力された数式の計算結果を表示します。Pythonの計算ライブラリを使用しており、安全かつ正確な処理が可能です。</p>
+    </div>
+
+    <div class="command-item">
+        <span class="command-name">/seisei [キーワード]</span>
+        <p>指定された条件に基づいた画像生成、または加工を行います。生成されたデータは内部IDによって管理されます。</p>
+    </div>
+
+    <div class="command-item">
+        <span class="command-name">/solt</span>
+        <p>対象に対して「お清め」を実行するユーモア機能です。コンテキストメニュー（右クリック）からも利用できます。</p>
+    </div>
+
+    <div class="command-item">
+        <span class="command-name">/koneta</span>
+        <p>開発にまつわるエピソードや、ランダムなテキストを表示します。</p>
+    </div>
+</div>
+
+<footer>
+    &copy; 2026 五目夕太 (Itsutsume Yuta)
+</footer>
+
+</body>
+</html>
