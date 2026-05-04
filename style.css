@@ -1,0 +1,53 @@
+/* style.css */
+
+/* 全体の背景と文字色 */
+body {
+    background-color: #0d0d0d; /* 漆黒に近い背景 */
+    color: #cfcfcf;           /* 目に優しい薄いグレー */
+    font-family: "Hiragino Mincho ProN", "MS Mincho", serif; /* 漢字が映える明朝体 */
+    line-height: 1.8;
+    margin: 0;
+    padding: 50px 15%;        /* 左右に余裕を持たせる */
+}
+
+/* タイトル部分 */
+h1 {
+    color: #ffffff;
+    font-size: 2.5rem;
+    border-bottom: 1px solid #444;
+    padding-bottom: 20px;
+    letter-spacing: 0.1em;
+}
+
+/* 各セクションの見出し */
+h2 {
+    color: #a0a0a0;
+    border-left: 4px solid #ffffff;
+    padding-left: 15px;
+    margin-top: 40px;
+}
+
+/* コマンドリストの装飾 */
+ul {
+    list-style-type: none; /* 箇条書きの点を消す */
+    padding: 0;
+}
+
+li {
+    background: #1a1a1a;
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #333;
+}
+
+/* 小ネタ用の隠し味（ephemeral的な雰囲気） */
+.secret {
+    color: #333; /* 背景に馴染ませて見えにくくする */
+    transition: color 0.5s;
+    cursor: default;
+}
+
+.secret:hover {
+    color: #ff0000; /* マウスを乗せた時だけ赤く浮かび上がる */
+}
