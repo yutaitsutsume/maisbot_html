@@ -160,12 +160,32 @@
         .btn-invite:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(75, 161, 255, 0.4); }
 
         footer { text-align: center; padding: 60px 20px; color: #999; border-top: 1px solid #eee; background: var(--light-bg); }
+        .nav-logo {
+            font-weight: bold;
+            color: var(--main-color);
+            text-decoration: none;
+            font-size: 1.1em;
+            /* 画像と文字を横並びにして中央揃えにする */
+            display: flex;
+            align-items: center;
+            gap: 10px; /* アイコンと文字の間隔 */
+        }
+
+        .nav-icon {
+            width: 32px;  /* ロゴの大きさに合わせたサイズ */
+            height: 32px;
+            border-radius: 50%; /* Discord風に丸くすると馴染みます */
+            object-fit: cover;
+        }
     </style>
 </head>
 <body>
 
 <nav>
-    <a href="index.html" class="nav-logo">お助け！マイスちゃんbot！</a>
+    <a href="index.html" class="nav-logo">
+        <img src="img/bot-icon.PNG" alt="アイコン" class="nav-icon"> <!-- ここを追加 -->
+        お助け！マイスちゃんbot！
+    </a>
     <button class="menu-btn" id="menuBtn">☰</button>
 </nav>
 
