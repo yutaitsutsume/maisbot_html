@@ -83,11 +83,13 @@
             /* 高さを横幅の1/3（500/1500）に固定するマジック */
             aspect-ratio: 1500 / 500;
             /* 画像指定：background-colorを予備で設定しておくと安心 */
+            text-align: center;
             background-color: var(--light-bg);
             background-image: url('img/banner.PNG');
-            background-size: cover;
+            background-size: contain;
+            background-repeat: no-repeat;
             background-position: center;
-            overflow: hidden;
+
             display: flex;
             justify-content: center;
             align-items: center;
@@ -96,11 +98,7 @@
 
         /* 画像の上に半透明の膜を張って文字を読みやすくする */
         .main-header::before {
-            content: "";
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(255, 255, 255, 0.4); /* 明るいサイトに合わせて白の半透明に */
-            z-index: 1;
+            display: none; /* これで「白い膜」が完全に消えて、元の画像の色が出ます */
         }
 
         .header-content {
@@ -112,7 +110,7 @@
             font-size: clamp(1.2em, 5vw, 2.2em); /* 画面が小さくなっても文字がはみ出ないように可変 */
             color: var(--main-color);
             margin: 0;
-            text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
+            text-shadow: 1px 1px 3px rgba(255,255,255,1), 0 0 10px rgba(255,255,255,0.8);
         }
         /* ---------------------------------- */
 
