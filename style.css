@@ -9,10 +9,44 @@ body {
     margin: 0;
     padding: 50px 15%;        /* 左右に余裕を持たせる */
 }
-header {
-    background-color: #ffffff;
-    padding: 60px 20px;
-    border-bottom: 2px solid #007bff; /* 誠実な青色のアクセント */
+/* ヘッダー全体の設定 */
+.main-header {
+    position: relative;
+    padding: 100px 20px; /* 上下の余白（画像の高さに合わせて調整） */
+    text-align: center;
+    background-image: url('header-banner.png'); /* ここに画像ファイル名を指定 */
+    background-size: cover;    /* 画像を枠いっぱいに広げる */
+    background-position: center; /* 画像の中央を表示 */
+    color: white; /* 画像の上で見やすいように文字を白にする */
+    overflow: hidden;
+}
+
+/* 画像が明るすぎて文字が見えにくい場合の「重し（オーバーレイ）」 */
+.main-header::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* 黒い半透明の膜を30%被せる */
+    z-index: 1;
+}
+
+/* 文字を膜より上に持ってくる */
+.header-content {
+    position: relative;
+    z-index: 2;
+}
+
+.main-header h1 {
+    font-size: 2.5em;
+    color: #ffffff !important; /* 強制的に白にする */
+    margin: 0;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5); /* 文字に影をつけて読みやすく */
+}
+
+.main-header p {
+    font-size: 1.1em;
+    margin-top: 10px;
+    text-shadow: 0 1px 5px rgba(0,0,0,0.5);
 }
 /* タイトル部分 */
 h1 {
