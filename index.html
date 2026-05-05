@@ -112,16 +112,50 @@
         .container { max-width: 800px; margin: auto; padding: 60px 20px; }
         h2 { border-left: 5px solid var(--main-color); padding-left: 15px; margin-bottom: 30px; }
 
-        .btn-invite .btn-support{
+        /* ボタンを囲むエリアの設定 */
+        .action-area {
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap; /* スマホで縦に並ぶように */
+        }
+
+        /* 共通スタイル：コンマ「,」で区切るのが正解です */
+        .btn-invite, .btn-support {
             display: inline-block;
-            background: var(--main-color);
-            color: white;
             padding: 18px 40px;
             text-decoration: none;
             border-radius: 50px;
             font-weight: bold;
-            box-shadow: 0 4px 15px rgba(75, 161, 255, 0.3);
-            transition: 0.3s;
+            transition: all 0.3s ease;
+            min-width: 240px; /* 横幅を揃えるとプロっぽくなります */
+            box-sizing: border-box;
+        }
+
+        /* 招待ボタンのデザイン */
+        .btn-invite {
+            background: var(--main-color);
+            color: white;
+            box-shadow: 0 4px 15px rgba(75, 161, 255, 0.4);
+        }
+
+        /* サポートボタンのデザイン：Discordのブランドカラー */
+        .btn-support {
+            background: #5865F2;
+            color: white;
+            box-shadow: 0 4px 15px rgba(88, 101, 242, 0.4);
+        }
+
+        /* ホバー（マウスを乗せた時）の動きを両方に適用 */
+        .btn-invite:hover, .btn-support:hover {
+            transform: translateY(-3px);
+            opacity: 0.95;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
         }
         .btn-invite:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(75, 161, 255, 0.4); }
 
