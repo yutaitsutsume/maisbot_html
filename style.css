@@ -141,14 +141,3 @@ footer { text-align: center; padding: 60px 20px; color: #999; border-top: 1px so
     color: #4BA1FF !important; /* 直接色を指定して、最優先にする */
     font-weight: bold;
 }
-
-/* もしボタンの色が消えていたら、ここもチェック */
-.btn-invite {
-    background-color: #4BA1FF !important;
-    color: white !important;
-}
-
-.btn-support {
-    background-color: #5865F2 !important;
-    color: white !important;
-}
