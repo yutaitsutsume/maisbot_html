@@ -1,97 +1,175 @@
-/* style.css */
+<style>
+        :root {
+            --main-color: #4BA1FF;
+            --text-color: #333333;
+            --bg-color: #ffffff;
+            --light-bg: #f8f9fa;
+        }
 
-/* 全体の背景と文字色 */
-body {
-    background-color: #f8f9fa; /* 明るい背景で清潔感を */
-    color: #000000;
-    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 50px 15%;        /* 左右に余裕を持たせる */
-}
-/* ヘッダー全体の設定 */
-.main-header {
-    position: relative;
-    padding: 100px 20px; /* 上下の余白（画像の高さに合わせて調整） */
-    text-align: center;
-    background-image: url('img', 'banner.PNG'); /* ここに画像ファイル名を指定 */
-    background-size: cover;    /* 画像を枠いっぱいに広げる */
-    background-position: center; /* 画像の中央を表示 */
-    color: white; /* 画像の上で見やすいように文字を白にする */
-    overflow: hidden;
-}
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+        }
 
-/* 画像が明るすぎて文字が見えにくい場合の「重し（オーバーレイ）」 */
-.main-header::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0, 0, 0, 0.3); /* 黒い半透明の膜を30%被せる */
-    z-index: 1;
-}
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(5px);
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #eee;
+            z-index: 1000;
+        }
 
-/* 文字を膜より上に持ってくる */
-.header-content {
-    position: relative;
-    z-index: 2;
-}
+        .nav-logo {
+            font-weight: bold;
+            color: var(--main-color);
+            text-decoration: none;
+            font-size: 1.1em;
+        }
 
-.main-header h1 {
-    font-size: 2.5em;
-    color: #ffffff !important; /* 強制的に白にする */
-    margin: 0;
-    text-shadow: 0 2px 10px rgba(0,0,0,0.5); /* 文字に影をつけて読みやすく */
-}
+        .menu-btn {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--main-color);
+            padding: 5px;
+            transition: transform 0.2s;
+        }
 
-.main-header p {
-    font-size: 1.1em;
-    margin-top: 10px;
-    text-shadow: 0 1px 5px rgba(0,0,0,0.5);
-}
-/* タイトル部分 */
-h1 {
-    color: #007bff;
-    font-size: 2.5rem;
-    border-bottom: 1px solid #444;
-    padding-bottom: 20px;
-    letter-spacing: 0.1em;
-}
+        .nav-links {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 280px;
+            height: 100vh;
+            background: var(--bg-color);
+            display: flex;
+            flex-direction: column;
+            padding: 60px 30px;
+            box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+            transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 999;
+        }
 
-/* 各セクションの見出し */
-h2 {
-    color: #a0a0a0;
-    border-left: 4px solid #ffffff;
-    padding-left: 15px;
-    margin-top: 40px;
-}
+        .nav-links.active { right: 0; }
 
-/* コマンドリストの装飾 */
-ul {
-    list-style-type: none; /* 箇条書きの点を消す */
-    padding: 0;
-}
+        .nav-links a {
+            color: #555;
+            text-decoration: none;
+            margin-bottom: 25px;
+            font-size: 1.05em;
+            font-weight: 500;
+        }
 
-li {
-    background: #1a1a1a;
-    margin-bottom: 10px;
-    padding: 15px;
-    border-radius: 5px;
-    border: 1px solid #333;
-}
-.command-box {
-    background: #fff;
-    border-left: 5px solid #007bff;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    padding: 20px;
-    margin-bottom: 20px;
-}
-/* 小ネタ用の隠し味（ephemeral的な雰囲気） */
-.secret {
-    color: #333; /* 背景に馴染ませて見えにくくする */
-    transition: color 0.5s;
-    cursor: default;
-}
+        /* --- 画像ヘッダーの修正ポイント --- */
+        .main-header {
+            position: relative;
+            width: 100%;
+            /* 高さを横幅の1/3（500/1500）に固定するマジック */
+            aspect-ratio: 1500 / 500;
+            /* 画像指定：background-colorを予備で設定しておくと安心 */
+            text-align: center;
+            background-color: var(--light-bg);
+            background-image: url('img/banner.PNG');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
 
-.secret:hover {
-    color: #ff0000; /* マウスを乗せた時だけ赤く浮かび上がる */
-}
+        /* 画像の上に半透明の膜を張って文字を読みやすくする */
+        .main-header::before {
+            display: none; /* これで「白い膜」が完全に消えて、元の画像の色が出ます */
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .main-header h1 {
+            font-size: clamp(1.2em, 5vw, 2.2em); /* 画面が小さくなっても文字がはみ出ないように可変 */
+            color: var(--main-color);
+            margin: 0;
+            text-shadow: 1px 1px 3px rgba(255,255,255,1), 0 0 10px rgba(255,255,255,0.8);
+        }
+        /* ---------------------------------- */
+
+        .container { max-width: 800px; margin: auto; padding: 60px 20px; }
+        h2 { border-left: 5px solid var(--main-color); padding-left: 15px; margin-bottom: 30px; }
+
+        /* ボタンを囲むエリアの設定 */
+        .action-area {
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap; /* スマホで縦に並ぶように */
+        }
+
+        /* 共通スタイル：コンマ「,」で区切るのが正解です */
+        .btn-invite, .btn-support {
+            display: inline-block;
+            padding: 18px 40px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            min-width: 240px; /* 横幅を揃えるとプロっぽくなります */
+            box-sizing: border-box;
+        }
+
+        /* 招待ボタンのデザイン */
+        .btn-invite {
+            background: var(--main-color);
+            color: white;
+            box-shadow: 0 4px 15px rgba(75, 161, 255, 0.4);
+        }
+
+        /* サポートボタンのデザイン：Discordのブランドカラー */
+        .btn-support {
+            background: #5865F2;
+            color: white;
+            box-shadow: 0 4px 15px rgba(88, 101, 242, 0.4);
+        }
+
+        /* ホバー（マウスを乗せた時）の動きを両方に適用 */
+        .btn-invite:hover, .btn-support:hover {
+            transform: translateY(-3px);
+            opacity: 0.95;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+        .btn-invite:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(75, 161, 255, 0.4); }
+
+        footer { text-align: center; padding: 60px 20px; color: #999; border-top: 1px solid #eee; background: var(--light-bg); }
+        .nav-logo {
+            font-weight: bold;
+            color: var(--main-color);
+            text-decoration: none;
+            font-size: 1.1em;
+            /* 画像と文字を横並びにして中央揃えにする */
+            display: flex;
+            align-items: center;
+            gap: 10px; /* アイコンと文字の間隔 */
+        }
+
+        .nav-icon {
+            width: 32px;
+            height: 32px;
+            /* 50%（丸）から 4px（少し角丸）くらいに変更 */
+            border-radius: 4px; 
+            object-fit: cover;
+        }
+    </style>
