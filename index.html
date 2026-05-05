@@ -79,8 +79,9 @@
         /* --- 画像ヘッダーの修正ポイント --- */
         .main-header {
             position: relative;
-            padding: 100px 20px;
-            text-align: center;
+            width: 100%;
+            /* 高さを横幅の1/3（500/1500）に固定するマジック */
+            aspect-ratio: 1500 / 500;
             /* 画像指定：background-colorを予備で設定しておくと安心 */
             background-color: var(--light-bg);
             background-image: url('img/banner.PNG');
@@ -90,7 +91,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 200px; /* 画像が表示されない時でも高さを確保 */
+            overflow: hidden;
         }
 
         /* 画像の上に半透明の膜を張って文字を読みやすくする */
@@ -108,7 +109,7 @@
         }
 
         .main-header h1 {
-            font-size: 2.2em;
+            font-size: clamp(1.2em, 5vw, 2.2em); /* 画面が小さくなっても文字がはみ出ないように可変 */
             color: var(--main-color);
             margin: 0;
             text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
