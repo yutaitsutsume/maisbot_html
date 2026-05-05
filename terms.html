@@ -1,1 +1,66 @@
-あ
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お助け！マイスちゃんbot！公式サイト</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+    <a href="index.html" class="nav-logo">
+        <img src="img/bot_icon.png" alt="アイコン" class="nav-icon">
+        お助け！マイスちゃんbot！
+    </a>
+    <button class="menu-btn" id="menuBtn">☰</button>
+</nav>
+
+<div class="nav-links" id="navLinks">
+    <a href="index.html">ホーム</a>
+    <a href="commands.html">コマンド</a>
+    <a href="support.html">サポート</a>
+    <a href="terms.html">ご利用規約</a>
+    <a href="privacypolicy.html">プライバシーポリシー</a>
+    <a href="status.html">ステータス</a>
+    <a href="https://discord.com/oauth2/authorize?client_id=1477164306285068370&permissions=8&integration_type=0&scope=bot" class="nav-invite-link">Botを招待する</a>
+</div>
+
+<header class="main-header">
+</header>
+
+<div class="container">
+    <section>
+        <h2>利用規約</h2>
+        <p></p>
+    </section>
+        <section>
+        <h2></h2>
+        <p></p>
+    </section>
+</div>
+
+<footer>
+    <p>&copy; 2026 㐅メ夕タ (Itsutsume Yuta)</p>
+</footer>
+
+<script>
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+
+    menuBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        navLinks.classList.toggle('active');
+        menuBtn.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!navLinks.contains(e.target) && navLinks.classList.contains('active')) {
+            navLinks.classList.remove('active');
+            menuBtn.textContent = '☰';
+        }
+    });
+</script>
+
+</body>
+</html>
