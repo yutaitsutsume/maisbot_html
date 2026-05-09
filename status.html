@@ -36,7 +36,27 @@
         
         <div class="status-card">
             <!-- 稼働状態（ここもPythonで書き換えてもOK） -->
-            <p>現在のステータス：<strong style="color: #2ecc71;">正常稼働中</strong></p>
+            <div class="status-card" style="
+            background: var(--light-bg); 
+            padding: 40px; 
+            border-radius: 15px; 
+            text-align: center; 
+            margin-top: 30px;
+            border: 1px solid #eee;">
+            
+            <p style="font-size: 1.2em; color: #666; margin-bottom: 10px;">現在のステータス</p>
+            
+            <!-- 正常時の表示 -->
+            <div style="display: flex; align-items: center; justify-content: center; gap: 15px;">
+                <span style="
+                    width: 20px; 
+                    height: 20px; 
+                    background: #2ecc71; 
+                    border-radius: 50%; 
+                    display: inline-block;
+                    box-shadow: 0 0 10px #2ecc71;"></span>
+                <strong style="font-size: 2.5em; color: #2ecc71;">正常稼働中</strong>
+            </div>
             
             <div class="stats-box" style="margin-top: 20px; border-top: 1px solid #eee; padding-top: 20px;">
                 <p>【運用統計情報】</p>
@@ -52,17 +72,6 @@
         <p style="margin-top: 30px; font-size: 0.9em;">
             ※本統計は、Discord APIを通じて取得した実数に基づき、自動で更新・公開されております。
         </p>
-    </section>
-</div>
-
-        <h3 style="margin-top: 50px;">過去の障害情報</h3>
-        <p>現在、記録すべき障害及び不具合の発生は御座いません。</p>
-        <h3 style="margin-top: 40px;">統計情報</h3>
-        <div class="status-stats">
-            <p>採用サーバー数：<strong id="server-count">[[SERVER_COUNT]]</strong> 箇所</p>
-            <p>利用者総数：<strong id="user-count">[[USER_COUNT]]</strong> 名</p>
-            <p style="font-size: 0.8em; color: #888;">最終点検日時：[[LAST_UPDATE]]</p>
-        </div>
     </section>
 </div>
 
