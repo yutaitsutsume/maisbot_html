@@ -31,37 +31,29 @@
 
 <div class="container">
     <section>
-        <h2>Botの稼働状況</h2>
-        <p>現在の稼働状態及び、システムの健全性を公開しております。</p>
+        <h2>本Botの稼働状況</h2>
+        <p>現在、システムの健全性及び運用統計を公開しております。</p>
         
-        
-        <div class="status-card" style="
-            background: var(--light-bg); 
-            padding: 40px; 
-            border-radius: 15px; 
-            text-align: center; 
-            margin-top: 30px;
-            border: 1px solid #eee;">
+        <div class="status-card">
+            <!-- 稼働状態（ここもPythonで書き換えてもOK） -->
+            <p>現在のステータス：<strong style="color: #2ecc71;">正常稼働中</strong></p>
             
-            <p style="font-size: 1.2em; color: #666; margin-bottom: 10px;">現在のステータス</p>
-            
-            <!-- 正常時の表示 -->
-            <div style="display: flex; align-items: center; justify-content: center; gap: 15px;">
-                <span style="
-                    width: 20px; 
-                    height: 20px; 
-                    background: #2ecc71; 
-                    border-radius: 50%; 
-                    display: inline-block;
-                    box-shadow: 0 0 10px #2ecc71;"></span>
-                <strong style="font-size: 2.5em; color: #2ecc71;">正常稼働中</strong>
+            <div class="stats-box" style="margin-top: 20px; border-top: 1px solid #eee; padding-top: 20px;">
+                <p>【運用統計情報】</p>
+                <!-- Pythonはこの特殊なコメントタグを目印に数字を流し込みます -->
+                <p>御採用サーバー総数：<strong>[[SERVER_COUNT]]</strong> 箇所</p>
+                <p>総利用者実数：<strong>[[USER_COUNT]]</strong> 名</p>
+                <p style="font-size: 0.8em; color: #888; margin-top: 15px;">
+                    最終点検時刻：<span id="last-update">[[LAST_UPDATE]]</span>
+                </p>
             </div>
-
-            <p style="margin-top: 20px; color: #888;">
-                現在、全システムは正常に推移しております。<br>
-                障害等の報告は御座いません。
-            </p>
         </div>
+
+        <p style="margin-top: 30px; font-size: 0.9em;">
+            ※本統計は、Discord APIを通じて取得した実数に基づき、自動で更新・公開されております。
+        </p>
+    </section>
+</div>
 
         <h3 style="margin-top: 50px;">過去の障害情報</h3>
         <p>現在、記録すべき障害及び不具合の発生は御座いません。</p>
