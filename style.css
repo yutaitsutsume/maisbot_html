@@ -141,7 +141,7 @@ h2 { border-left: 5px solid var(--main-color); padding-left: 15px; margin-bottom
     box-shadow: 0 4px 15px rgba(88, 101, 242, 0.4);
 }
 
-.btn-invite:hover, .btn-support:hover {
+.btn-invite:hover, .btn-support:hover, .btn-X:hover, .btn-github:hover {
     transform: translateY(-3px);
     opacity: 0.95;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
