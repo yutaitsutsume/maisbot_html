@@ -129,6 +129,18 @@ h2 { border-left: 5px solid var(--main-color); padding-left: 15px; margin-bottom
     box-shadow: 0 4px 15px rgba(88, 101, 242, 0.4);
 }
 
+.btn-X {
+    background: #000000;
+    color: white;
+    box-shadow: 0 4px 15px rgba(75, 161, 255, 0.4);
+}
+
+.btn-github {
+    background: #238636;
+    color: white;
+    box-shadow: 0 4px 15px rgba(88, 101, 242, 0.4);
+}
+
 .btn-invite:hover, .btn-support:hover {
     transform: translateY(-3px);
     opacity: 0.95;
