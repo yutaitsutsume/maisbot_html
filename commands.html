@@ -30,16 +30,36 @@
 <header class="main-header">
 </header>
 
-<div class="container">
-    <section>
-        <h2>コマンド</h2>
-        <p>問題生成、漢字でGO！関連他</p>
-    </section>
-        <section>
-        <h2></h2>
-        <p></p>
-    </section>
-</div>
+<section class="commands-section">
+    <h2 class="text-center">機能目録 <span style="font-size: 0.6em; color: #888;">- Command List -</span></h2>
+    <p class="text-center" style="margin-bottom: 40px;">マイスちゃんが有する権能の一覧です。斜線（/）に続けて各指令を入力して下さい。</p>
+
+    <div class="command-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+        
+        <!-- 例：計算機能 -->
+        <div class="command-card" style="border: 1px solid #e0e0e0; padding: 20px; border-radius: 12px; background: #fff; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+            <h3 style="color: #5865F2; margin-top: 0;">🔢 算術演算（calc）</h3>
+            <p style="font-size: 0.9em; color: #666; line-height: 1.6;">
+                <strong>概要：</strong> 入力された数式の計算結果を即座に返します。<br>
+                <strong>用法：</strong> <code>/calc [数式]</code><br>
+                <span style="color: #999; font-size: 0.85em;">※四則演算及び複雑な関数に対応。</span>
+            </p>
+        </div>
+
+        <!-- 例：ID検索機能（開発中のもの） -->
+        <div class="command-card" style="border: 1px solid #e0e0e0; padding: 20px; border-radius: 12px; background: #fff; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+            <h3 style="color: #5865F2; margin-top: 0;">🔍 識別子照会（id）</h3>
+            <p style="font-size: 0.9em; color: #666; line-height: 1.6;">
+                <strong>概要：</strong> 指定された対象の固有識別子（ID）を抽出・表示します。<br>
+                <strong>用法：</strong> <code>/id [対象]</code><br>
+                <span style="color: #999; font-size: 0.85em;">※部分一致検索機能（部分指定）を搭載。</span>
+            </p>
+        </div>
+
+        <!-- ここに他のコマンドを順次追加 -->
+
+    </div>
+</section>
 
 <footer>
     <p>&copy; 2026 㐅メ夕タ (Itsutsume Yuta)</p>
