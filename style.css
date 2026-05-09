@@ -106,7 +106,7 @@ h2 { border-left: 5px solid var(--main-color); padding-left: 15px; margin-bottom
     flex-wrap: wrap;
 }
 
-.btn-invite, .btn-support {
+.btn-invite, .btn-support .btn-X .btn-github{
     display: inline-block;
     padding: 18px 40px;
     text-decoration: none;
