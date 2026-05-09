@@ -35,40 +35,40 @@
         <p>あなたのDiscordサーバーを少し便利にする多機能Botです。<br>計算、漢字でGO！に関する機能やジェネレーター、ちょっとしたお遊び機能を備えた、シンプルで使いやすく、それでいて痒いところに手が届く。そんなツールを目指して開発しています。<br>皆様に楽しく便利にご利用頂けたら幸いです。是非導入してみてはいかがでしょうか。</p>
     </section>
 <section class="commands-section">
-    <h2 class="text-center">機能目録 <span style="font-size: 0.6em; color: #888;">- Command List -</span></h2>
-    <p class="text-center">各指令の頭に斜線（/）を付して実行して下さい。漢字の深淵、算術の真理へと誘います。</p>
+    <h2 class="text-center">マイスちゃんの「できること」</h2>
+    <p class="text-center" style="color: #666;">
+        スラッシュ（/）を入力して、マイスちゃんに命令を送ってみてね。<br>
+        ※[ ] の部分は、あなたが調べたい言葉や数式に入れ替えて使ってください。
+    </p>
 
-    <div class="command-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; margin-top: 40px;">
+    <div class="command-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 30px;">
         
-        <!-- 問題生成系 -->
-        <div class="command-card">
-            <h3>📑 題詠生成（/seisei）</h3>
-            <p><strong>摘要：</strong> 指定された条件に基づき、漢字に関する問題を自動生成します。</p>
-            <p><strong>用法：</strong> <code>/seisei [形式]</code></p>
-            <div class="command-tag">独自生成エンジン搭載</div>
+        <!-- 問題生成 -->
+        <div class="command-card" style="border: 2px solid #f0f0f0; padding: 20px; border-radius: 15px;">
+            <h3 style="color: #5865F2; margin-bottom: 10px;">📝 問題をつくる</h3>
+            <p><strong>/seisei</strong><br>
+            漢字の読み書き問題をランダムに出題します。勉強のお供にどうぞ！</p>
+            
+            <p style="margin-top: 10px;"><strong>/seisei_id [ID]</strong><br>
+            特定のIDを指定して問題を出します。「部分指定」もできる優れものです。</p>
         </div>
 
-        <div class="command-card">
-            <h3>識 識別子生成（/seisei_id）</h3>
-            <p><strong>摘要：</strong> 固有識別子（ID）を伴う精緻な問題生成を行います。部分指定も可能です。</p>
-            <p><strong>用法：</strong> <code>/seisei_id [ID] [部分]</code></p>
-            <div class="command-tag">部分指定対応</div>
+        <!-- 漢字でGO! -->
+        <div class="command-card" style="border: 2px solid #f0f0f0; padding: 20px; border-radius: 15px;">
+            <h3 style="color: #ffaa00; margin-bottom: 10px;">📚 漢字データベース</h3>
+            <p><strong>/database [キーワード]</strong><br>
+            「漢字でGO!」に登場する漢字や情報を検索できます。気になった言葉をすぐチェック！</p>
         </div>
 
-        <!-- 漢字でGO! 関連 -->
-        <div class="command-card" style="border-left: 5px solid #ffcc00;">
-            <h3>📚 字典照会（/database）</h3>
-            <p><strong>摘要：</strong> 「漢字でGO!」に関する膨大な記録群より、該当する情報を瞬時に抽出します。</p>
-            <p><strong>用法：</strong> <code>/database [語彙]</code></p>
-            <div class="command-tag">広域検索対応</div>
+        <!-- 計算 -->
+        <div class="command-card" style="border: 2px solid #f0f0f0; padding: 20px; border-radius: 15px;">
+            <h3 style="color: #238636; margin-bottom: 10px;">🧮 計算する</h3>
+            <p><strong>/keisan [数式]</strong><br>
+            四則演算からちょっと複雑な計算まで、マイスちゃんが代わりに答えを出します。</p>
         </div>
 
-        <!-- 計算系 -->
-        <div class="command-card">
-            <h3>🧮 算術演算（/keisan）</h3>
-            <p><strong>摘要：</strong> 四則演算を始めとする各種数式の計算結果を算定します。</p>
-            <p><strong>用法：</strong> <code>/keisan [数式]</code></p>
-            <div class="command-tag">高速演算</div>
+    </div>
+</section>
         </div>
 
     </div>
