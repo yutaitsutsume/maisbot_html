@@ -106,7 +106,7 @@ h2 { border-left: 5px solid var(--main-color); padding-left: 15px; margin-bottom
     flex-wrap: wrap;
 }
 
-.btn-invite, .btn-support .btn-X .btn-github{
+.btn-invite, .btn-support, .btn-X, .btn-github{
     display: inline-block;
     padding: 18px 40px;
     text-decoration: none;
@@ -138,7 +138,7 @@ h2 { border-left: 5px solid var(--main-color); padding-left: 15px; margin-bottom
 .btn-github {
     background: #238636;
     color: white;
-    box-shadow: 0 4px 15px rgba(88, 101, 242, 0.4);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 }
 
 .btn-invite:hover, .btn-support:hover, .btn-X:hover, .btn-github:hover {
