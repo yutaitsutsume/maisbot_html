@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お助け！マイスちゃんbot！公式サイト</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+    <a href="index.html" class="nav-logo">
+        <img src="img/bot_icon.png" alt="アイコン" class="nav-icon">
+        お助け！マイスちゃんbot！
+    </a>
+    <button class="menu-btn" id="menuBtn">☰</button>
+</nav>
+
+<div class="nav-links" id="navLinks"></div>
+
+<script>
+    // nav.htmlを読み込んで id="navLinks" に流し込む
+    fetch('nav.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('navLinks').innerHTML = data;
+        });
+</script>
+
+<header class="main-header">
+</header>
+<div class="container">
+    <section>
+        <h2></h2>
+        <p></p>
+    </section>
+<section class="commands-section">
+    <h2 class="text-center">コマンド～マイスちゃんの「できること」～</h2>
+    <p class="text-center" style="color: #666;">
+        スラッシュ（/）を入力して、マイスちゃんに命令を送ってみてね。<br>
+        ※[ ] の部分は、あなたが調べたい言葉や数式に入れ替えて使ってください。
+    </p>
+
+    <div class="command-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 30px;">
+        
+        <!-- 問題生成 -->
+        <div class="command-card" style="border: 2px solid #f0f0f0; padding: 20px; border-radius: 15px;">
+            <h3 style="color: #5865F2; margin-bottom: 10px;">📝 漢字でGO！メーカー</h3>
+            <p><strong>/seisei</strong><br>
+            漢字の読み書き問題をランダムに出題します。勉強のお供にどうぞ！</p>
+            
+            <p style="margin-top: 10px;"><strong>/seisei_id [ID]</strong><br>
+            特定のIDを指定して問題を出します。「部分指定」もできる優れものです。</p>
+        </div>
+
+        <!-- 漢字でGO！関連 -->
+        <div class="command-card" style="border: 2px solid #f0f0f0; padding: 20px; border-radius: 15px;">
+            <h3 style="color: #ffaa00; margin-bottom: 10px;">📚 漢字でGO！関連</h3>
+            <p><strong>/database [キーワード]</strong><br>
+            「漢字でGO!」の攻略データベースのリンクを表示します。気になった言葉をすぐチェック！</p>            
+            <p style="margin-top: 10px;"><strong>/go_power</strong><br>
+            GOパワー・称号の確認をします。あとどれぐらいで次の称号が手に入るのかチェック！</p>
+        </div>
+
+        <!-- 計算 -->
+        <div class="command-card" style="border: 2px solid #f0f0f0; padding: 20px; border-radius: 15px;">
+            <h3 style="color: #238636; margin-bottom: 10px;">🧮 計算機能</h3>
+            <p><strong>/keisan [数式]</strong><br>
+            四則演算からちょっと複雑な計算まで、マイスちゃんが代わりに答えを出します。</p>
+            <p><strong>/average</strong><br>
+            平均値の計算
+            </p>
+            <p><strong>/convert</strong><br>
+            単位換算
+            </p>
+            <p><strong>/keisan</strong><br>
+            数式・方程式の計算（数字アタック対策）
+            </p>
+            <p><strong>/prime</strong><br>
+            素数判定
+            </p>
+            <p><strong>/sqrt</strong><br>
+            平方根の計算
+            </p>
+            <p><strong>/rate</strong><br>
+            主要25ヶ国の為替レート
+            </p>
+            <p><strong>/bmi</strong><br>
+            BMI計算
+            </p>
+            <p><strong>/keisan_time</strong><br>
+            時間計算
+            </p>
+            <p><strong>/hajiki</strong><br>
+            速さ・時間・距離の計算
+            </p>
+        <!--遊び-->
+        <div class="command-card" style="border: 2px solid #f0f0f0; padding: 20px; border-radius: 15px;">
+            <h3 style="color: #238636; margin-bottom: 10px;">🎮 遊び機能</h3>
+            <p><strong></strong>/janken</strong><br>
+            じゃんけん
+            </p>
+            <p><strong>/hoi</strong><br>
+            あっち向いてホイ
+            </p>
+            <p><strong>/guess</strong><br>
+            数字当てゲーム
+            </p>
+        <!--ネタ-->
+        <div class="command-card" style="border: 2px solid #f0f0f0; padding: 20px; border-radius: 15px;">
+            <h3 style="color: #238636; margin-bottom: 10px;">🎮 ネタ機能</h3>
+            <p><strong>/iei</strong><br>
+            遺影の画像生成
+            </p>
+            <p><strong>/solt</strong><br>
+            塩振りおじさん召喚
+            </p>
+        <!--セキュリティ対策-->
+        <div class="command-card" style="border: 2px solid #f0f0f0; padding: 20px; border-radius: 15px;">
+            <h3 style="color: #238636; margin-bottom: 10px;">🎮 セキュリティ対策</h3>
+            <p><strong></strong>/ban</strong><br>
+            垢BAN(管理者権限のみ)
+            </p>
+            <p><strong>/kick</strong><br>
+            キック(管理者権限のみ)
+            </p>
+            <p><strong>/timeout</strong><br>
+            タイムアウト(管理者権限のみ)
+            </p>
+        <!--遊び-->
+        <div class="command-card" style="border: 2px solid #f0f0f0; padding: 20px; border-radius: 15px;">
+            <h3 style="color: #238636; margin-bottom: 10px;">🎮 その他の機能</h3>
+            <p><strong></strong>/unicode</strong><br>
+            Unicode変換
+            </p>
+            <p><strong>/translate</strong><br>
+            テキスト翻訳（英語アタック対策）
+            </p>
+            <p><strong>/icon</strong><br>
+            アイコン出力
+            </p>
+            <p><strong></strong>/help</strong><br>
+            このヘルプを表示
+            </p>
+            <p><strong>/char</strong><br>
+            文字化けの解読と発生
+            </p>
+            
+        </div>
+        <!-- HTML部分 -->
+        <div class="command-card">
+            <h3>📝 漢字でGO！メーカー</h3>
+            <p>
+                <!-- クリックでコピーされる要素。onclickに注目 -->
+                <code class="copy-code" onclick="copyToClipboard('/seisei')" title="クリックでコピー">/seisei</code>
+                <br>
+                漢字の読み書き問題をランダムに出題します。
+            </p>
+    
+            <p style="margin-top: 10px;">
+                <code class="copy-code" onclick="copyToClipboard('/seisei_id ')" title="クリックでコピー">/seisei_id [ID]</code>
+                <br>
+                特定のIDを指定して問題を出します。
+            </p>
+        </div>
+
+    </div>
+</section>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2026 㐅メ夕タ (Itsutsume Yuta)</p>
+</footer>
+
+<script>
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+
+    menuBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        navLinks.classList.toggle('active');
+        menuBtn.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!navLinks.contains(e.target) && navLinks.classList.contains('active')) {
+            navLinks.classList.remove('active');
+            menuBtn.textContent = '☰';
+        }
+    });
+</script>
+
+</body>
+</html>
