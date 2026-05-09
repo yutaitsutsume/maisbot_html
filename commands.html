@@ -31,11 +31,11 @@
 </header>
 <div class="container">
     <section>
-        <h2>コマンド</h2>
-        <p>あなたのDiscordサーバーを少し便利にする多機能Botです。<br>計算、漢字でGO！に関する機能やジェネレーター、ちょっとしたお遊び機能を備えた、シンプルで使いやすく、それでいて痒いところに手が届く。そんなツールを目指して開発しています。<br>皆様に楽しく便利にご利用頂けたら幸いです。是非導入してみてはいかがでしょうか。</p>
+        <h2></h2>
+        <p></p>
     </section>
 <section class="commands-section">
-    <h2 class="text-center">マイスちゃんの「できること」</h2>
+    <h2 class="text-center">コマンド～マイスちゃんの「できること」～</h2>
     <p class="text-center" style="color: #666;">
         スラッシュ（/）を入力して、マイスちゃんに命令を送ってみてね。<br>
         ※[ ] の部分は、あなたが調べたい言葉や数式に入れ替えて使ってください。
@@ -53,11 +53,13 @@
             特定のIDを指定して問題を出します。「部分指定」もできる優れものです。</p>
         </div>
 
-        <!-- 漢字でGO! -->
+        <!-- 漢字でGO！関連 -->
         <div class="command-card" style="border: 2px solid #f0f0f0; padding: 20px; border-radius: 15px;">
             <h3 style="color: #ffaa00; margin-bottom: 10px;">📚 漢字データベース</h3>
             <p><strong>/database [キーワード]</strong><br>
-            「漢字でGO!」に登場する漢字や情報を検索できます。気になった言葉をすぐチェック！</p>
+            「漢字でGO!」の攻略データベースのリンクを表示します。気になった言葉をすぐチェック！</p>            
+            <p style="margin-top: 10px;"><strong>/go_power</strong><br>
+            GOパワー・称号の確認をします。</p>
         </div>
 
         <!-- 計算 -->
@@ -65,6 +67,22 @@
             <h3 style="color: #238636; margin-bottom: 10px;">🧮 計算する</h3>
             <p><strong>/keisan [数式]</strong><br>
             四則演算からちょっと複雑な計算まで、マイスちゃんが代わりに答えを出します。</p>
+        </div>
+        <!-- HTML部分 -->
+        <div class="command-card">
+            <h3>📝 問題をつくる</h3>
+            <p>
+                <!-- クリックでコピーされる要素。onclickに注目 -->
+                <code class="copy-code" onclick="copyToClipboard('/seisei')" title="クリックでコピー">/seisei</code>
+                <br>
+                漢字の読み書き問題をランダムに出題します。
+            </p>
+    
+            <p style="margin-top: 10px;">
+                <code class="copy-code" onclick="copyToClipboard('/seisei_id ')" title="クリックでコピー">/seisei_id [ID]</code>
+                <br>
+                特定のIDを指定して問題を出します。
+            </p>
         </div>
 
     </div>
