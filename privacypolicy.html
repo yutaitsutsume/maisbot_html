@@ -16,14 +16,16 @@
     <button class="menu-btn" id="menuBtn">☰</button>
 </nav>
 
-<div class="nav-links" id="navLinks">
-    <a href="index.html">ホーム</a>
-    <a href="commands.html">コマンド</a>
-    <a href="support.html">サポート</a>
-    <a href="terms.html">ご利用規約</a>
-    <a href="privacypolicy.html">プライバシーポリシー</a>
-    <a href="https://discord.com/oauth2/authorize?client_id=1477164306285068370&permissions=8&integration_type=0&scope=bot" class="nav-invite-link">Botを招待する</a>
-</div>
+<div class="nav-links" id="navLinks"></div>
+
+<script>
+    // nav.htmlを読み込んで id="navLinks" に流し込む
+    fetch('nav.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('navLinks').innerHTML = data;
+        });
+</script>
 
 <header class="main-header">
 </header>
