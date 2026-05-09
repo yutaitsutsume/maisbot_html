@@ -153,3 +153,25 @@ footer { text-align: center; padding: 60px 20px; color: #999; border-top: 1px so
     color: #4BA1FF !important; /* 直接色を指定して、最優先にする */
     font-weight: bold;
 }
+.copy-code {
+    display: inline-block;
+    background: #f4f4f4;
+    padding: 2px 8px;
+    border-radius: 4px;
+    cursor: pointer; /* 指マークにする */
+    transition: all 0.2s;
+    border: 1px solid #ddd;
+    font-weight: bold;
+    color: #5865F2; /* Discordっぽい青 */
+}
+
+.copy-code:hover {
+    background: #eef0ff;
+    border-color: #5865F2;
+    transform: scale(1.05); /* 少し大きくして反応を出す */
+}
+
+.copy-code::after {
+    content: " 📋"; /* アイコンを添えて直感的に */
+    font-size: 0.8em;
+}
