@@ -198,6 +198,16 @@
         }
     });
 </script>
-
+<!-- JavaScript: コピー機能 -->
+    <script>
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                // 成功時の演出（とりあえずは通知）
+                alert("コピーしました！\n" + text);
+            }).catch(err => {
+                console.error("コピー失敗:", err);
+            });
+        }
+    </script>
 </body>
 </html>
