@@ -43,16 +43,23 @@
 
     <div class="command-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 30px;">
         
-        <!-- 問題生成 -->
-        <div class="command-card" style="border: 2px solid #f0f0f0; padding: 20px; border-radius: 15px;">
-            <h3 style="color: #5865F2; margin-bottom: 10px;">📝 漢字でGO！メーカー機能</h3>
-            Discordのbotで唯一の機能！問題を出し合ったりメッセージ感覚でご利用ください</p>
-            <p><strong>/seisei</strong><br>
-            漢字でGO!風の問題画像を生成します。</p>
-            
-            <p style="margin-top: 10px;"><strong>/seisei_id</strong><br>
-            ID指定による問題生成。固有のレベルとIDを入力して、本家同様の問題をそのまま生成できます。</p>
+        <!-- 問題生成系を「特大カード」として1段目に配置 -->
+        <div class="command-card feature-highlight" style="grid-column: 1 / -1; border: 3px solid #5865f2; background: #f9faff;">
+            <h3 style="color: #5865f2; font-size: 1.5em;">👑 唯一無二：漢字でGO！メーカー機能</h3>
+            <p style="font-size: 1.1em; margin-bottom: 15px;">
+            Discord Botで唯一！本家そっくりの問題画像を生成し、メッセージ感覚で出し合えます。
+        </p>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+            <div style="background: white; padding: 10px; border-radius: 8px; border: 1px dashed #5865f2;">
+            <strong>/seisei</strong><br>
+            <small>ランダムに問題を生成。まずはここから！</small>
+            </div>
+        <div style="background: white; padding: 10px; border-radius: 8px; border: 1px dashed #5865f2;">
+            <strong>/seisei_id [ID]</strong><br>
+            <small>本家同様のレベル・IDでそのまま生成。</small>
         </div>
+    </div>
 
         <!-- 漢字でGO！関連 -->
         <div class="command-card" style="border: 2px solid #f0f0f0; padding: 20px; border-radius: 15px;">
