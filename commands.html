@@ -6,76 +6,112 @@
     <title>お助け！マイスちゃんbot！公式サイト - コマンド一覧</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* 💡 TakasumiBOTのDocs風レイアウトを実現するための追加CSS */
-        .docs-wrapper {
+        /* 💡 GitHub Docs風の無機質でシンプルな2カラムレイアウト */
+        body {
+            background-color: #ffffff;
+            color: #24292f;
+        }
+        
+        .docs-container {
             display: flex;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
-            gap: 30px;
+            padding: 40px 20px;
         }
-        /* 左側：固定サイドバーメニュー */
-        .docs-sidebar {
-            width: 280px;
+
+        /* 👈 左側：極シンプルで動かないサイドバー */
+        .sidebar {
+            width: 260px;
             position: sticky;
             top: 20px;
             height: calc(100vh - 40px);
             overflow-y: auto;
-            background: #fff;
-            padding: 20px;
-            border-radius: 12px;
-            border: 1px solid #e1e4e8;
+            padding-right: 20px;
+            border-right: 1px solid #d0d7de; /* 境界線はこれ1本だけ */
+        }
+        .sidebar-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #57606a;
+            margin-bottom: 10px;
+            padding-left: 10px;
         }
         .sidebar-menu {
             list-style: none;
             padding: 0;
             margin: 0;
         }
-        .sidebar-item a {
+        .sidebar-link {
             display: block;
-            padding: 10px 15px;
-            color: #444;
+            padding: 6px 10px;
+            color: #24292f;
             text-decoration: none;
+            font-size: 14px;
             border-radius: 6px;
-            margin-bottom: 5px;
-            font-weight: bold;
-            transition: 0.2s;
+            transition: background 0.1s;
         }
-        .sidebar-item a:hover {
-            background: #f0f2f5;
-            color: #5865f2;
-        }
-        /* 右側：メインコンテンツ */
-        .docs-content {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-        }
-        .category-block {
-            background: #fff;
-            padding: 30px;
-            border-radius: 12px;
-            border: 1px solid #e1e4e8;
-            scroll-margin-top: 20px; /* スクロール位置の微調整 */
-        }
-        .command-item {
-            background: #f8f9fa;
-            padding: 15px;
-            border-radius: 8px;
-            margin-top: 15px;
-            border-left: 4px solid #7f8c8d;
+        .sidebar-link:hover {
+            background-color: #f6f8fa;
+            color: #0969da;
         }
 
-        /* 📱 スマホ対応（画面が狭いときは縦並びにする） */
+        /* 👉 右側：メインコンテンツ（すっきりしたテキストベース） */
+        .main-content {
+            flex: 1;
+            padding-left: 40px;
+        }
+        .page-title {
+            font-size: 32px;
+            font-weight: 600;
+            border-bottom: 1px solid #d0d7de;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+        .section-title {
+            font-size: 24px;
+            font-weight: 600;
+            margin-top: 40px;
+            margin-bottom: 16px;
+            border-bottom: 1px solid #d0d7de;
+            padding-bottom: 6px;
+        }
+        
+        /* コマンドごとの行（余計な背景や枠はナシ、すっきり並べる） */
+        .command-row {
+            padding: 12px 0;
+            border-bottom: 1px dashed #eee;
+        }
+        .command-name {
+            font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+            background-color: #afb8c133;
+            padding: 2px 6px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #24292f;
+        }
+        .command-desc {
+            font-size: 14px;
+            color: #57606a;
+            margin-top: 4px;
+        }
+
+        /* スマホ時はサイドバーの線を消して縦に並べるだけ */
         @media (max-width: 768px) {
-            .docs-wrapper {
+            .docs-container {
                 flex-direction: column;
             }
-            .docs-sidebar {
+            .sidebar {
                 width: 100%;
                 position: static;
                 height: auto;
+                border-right: none;
+                border-bottom: 1px solid #d0d7de;
+                padding-bottom: 20px;
+                margin-bottom: 20px;
+            }
+            .main-content {
+                padding-left: 0;
             }
         }
     </style>
@@ -93,7 +129,6 @@
 <div class="nav-links" id="navLinks"></div>
 
 <script>
-    // nav.htmlを読み込んで id="navLinks" に流し込む
     fetch('nav.html')
         .then(response => response.text())
         .then(data => {
@@ -101,161 +136,142 @@
         });
 </script>
 
-<header class="main-header">
-</header>
+<!-- 🗺️ ここからシンプルな2カラム Docs 構造 -->
+<div class="docs-container">
 
-<!-- 🗺️ ここからTakasumiBOT風の2カラム構造スタート -->
-<div class="docs-wrapper">
-
-    <!-- 👈 左側：カテゴリナビゲーション（画面に固定されます） -->
-    <aside class="docs-sidebar">
-        <h3 style="margin-bottom: 15px; font-size: 1.1em; color: #666; border-bottom: 2px solid #eee; padding-bottom: 5px;">📂 カテゴリ一覧</h3>
+    <!-- 👈 左側：無駄のないサイドバーメニュー -->
+    <aside class="sidebar">
+        <div class="sidebar-title">コマンドカテゴリ</div>
         <ul class="sidebar-menu">
-            <li class="sidebar-item"><a href="#kanji-generator">👑 漢字でGO!ジェネレーター</a></li>
-            <li class="sidebar-item"><a href="#kanji-related">📙 漢字でGO!関連</a></li>
-            <li class="sidebar-item"><a href="#calculator">📊 計算</a></li>
-            <li class="sidebar-item"><a href="#games">🎮 遊び</a></li>
-            <li class="sidebar-item"><a href="#jokes">🤪 ネタ</a></li>
-            <li class="sidebar-item"><a href="#security">🛡️ セキュリティ</a></li>
-            <li class="sidebar-item"><a href="#others">⚙️ その他</a></li>
+            <li><a href="#kanji-generator" class="sidebar-link">漢字でGO!ジェネレーター</a></li>
+            <li><a href="#kanji-related" class="sidebar-link">漢字でGO!関連</a></li>
+            <li><a href="#calculator" class="sidebar-link">計算</a></li>
+            <li><a href="#games" class="sidebar-link">遊び</a></li>
+            <li><a href="#jokes" class="sidebar-link">ネタ</a></li>
+            <li><a href="#security" class="sidebar-link">セキュリティ</a></li>
+            <li><a href="#others" class="sidebar-link">その他</a></li>
         </ul>
     </aside>
 
-    <!-- 👉 右側：メインコンテンツ（各カテゴリのコマンド詳細） -->
-    <main class="docs-content">
-        
-        <div style="margin-bottom: 10px;">
-            <h2 style="font-size: 2em; margin-bottom: 5px;">コマンド一覧</h2>
-            <p style="color: #666;">スラッシュ（/）を入力して、マイスちゃんに送ってみてね。</p>
-        </div>
+    <!-- 👉 右側：メインコンテンツ -->
+    <main class="main-content">
+        <h1 class="page-title">コマンド一覧</h1>
+        <p style="color: #57606a;">スラッシュ（/）を入力して、マイスちゃんを呼び出そう。</p>
 
         <!-- 1. 漢字でGO!ジェネレーター -->
-        <section id="kanji-generator" class="category-block" style="border-top: 4px solid #5865f2;">
-            <h2 style="color: #5865f2; margin-bottom: 10px;">👑 漢字でGO！ジェネレーター</h2>
-            <p>Discord Botで唯一！本家そっくりの問題画像を生成し、メッセージ感覚で出し合えます。</p>
-            
-            <div class="command-item" style="border-left-color: #5865f2; background: #f9faff;">
-                <strong>/seisei</strong><br>
-                <span style="color: #555; font-size: 0.9em;">ランダムに問題を生成。まずはここから！</span>
+        <section id="kanji-generator">
+            <h2 class="section-title">漢字でGO！ジェネレーター</h2>
+            <div class="command-row">
+                <span class="command-name">/seisei</span>
+                <div class="command-desc">ランダムに問題を生成。まずはここから！</div>
             </div>
-            <div class="command-item" style="border-left-color: #5865f2; background: #f9faff;">
-                <strong>/seisei_id [ID]</strong><br>
-                <span style="color: #555; font-size: 0.9em;">本家同様のレベル・IDでそのまま生成。</span>
+            <div class="command-row">
+                <span class="command-name">/seisei_id [ID]</span>
+                <div class="command-desc">本家同様のレベル・IDでそのまま生成。</div>
             </div>
         </section>
 
         <!-- 2. 漢字でGO!関連 -->
-        <section id="kanji-related" class="category-block" style="border-top: 4px solid #ffaa00;">
-            <h2 style="color: #ffaa00; margin-bottom: 10px;">📙 漢字でGO！関連</h2>
-            <p>「漢字でGO！」のプレイにめちゃくちゃ役立つ便利機能集です。</p>
-            
-            <div class="command-item" style="border-left-color: #ffaa00;">
-                <strong>/database</strong><br>
-                <span style="color: #555; font-size: 0.9em;">攻略データベースのリンクを表示します。気になった言葉をすぐチェック！</span>
+        <section id="kanji-related">
+            <h2 class="section-title">漢字でGO！関連</h2>
+            <div class="command-row">
+                <span class="command-name">/database</span>
+                <div class="command-desc">「漢字でGO!」の攻略データベースのリンクを表示。</div>
             </div>
-            <div class="command-item" style="border-left-color: #ffaa00;">
-                <strong>/go_power</strong><br>
-                <span style="color: #555; font-size: 0.9em;">GOパワー・称号の確認をします。あとどれぐらいで次の称号が手に入るのかが丸分かり！</span>
+            <div class="command-row">
+                <span class="command-name">/go_power</span>
+                <div class="command-desc">GOパワー・称号の確認。あとどれぐらいで次の称号が手に入るかが丸分かり！</div>
             </div>
         </section>
 
         <!-- 3. 計算 -->
-        <section id="calculator" class="category-block" style="border-top: 4px solid #238636;">
-            <h2 style="color: #238636; margin-bottom: 10px;">📊 計算</h2>
-            <p>四則演算からちょっと複雑な計算まで、マイスちゃんが代わりに爆速で答えを出します。</p>
-            
-            <div class="command-item" style="border-left-color: #238636;"><strong>/average</strong> ： 平均値の計算</div>
-            <div class="command-item" style="border-left-color: #238636;"><strong>/convert</strong> ： 単位換算</div>
-            <div class="command-item" style="border-left-color: #238636;"><strong>/keisan</strong> ： 数式・方程式の計算。数字アタック対策におすすめ！</div>
-            <div class="command-item" style="border-left-color: #238636;"><strong>/prime</strong> ： 素数判定</div>
-            <div class="command-item" style="border-left-color: #238636;"><strong>/sqrt</strong> ： 平方根の計算</div>
-            <div class="command-item" style="border-left-color: #238636;"><strong>/rate</strong> ： 主要25ヶ国の為替レート</div>
-            <div class="command-item" style="border-left-color: #238636;"><strong>/bmi</strong> ： BMI計算。あなたの健康チェック！</div>
-            <div class="command-item" style="border-left-color: #238636;"><strong>/keisan_time</strong> ： 時間計算</div>
-            <div class="command-item" style="border-left-color: #238636;"><strong>/hajiki</strong> ： 速さ・時間・距離の計算</div>
+        <section id="calculator">
+            <h2 class="section-title">計算</h2>
+            <div class="command-row"><span class="command-name">/average</span><div class="command-desc">平均値の計算</div></div>
+            <div class="command-row"><span class="command-name">/convert</span><div class="command-desc">単位換算</div></div>
+            <div class="command-row"><span class="command-name">/keisan</span><div class="command-desc">数式・方程式の計算（数字アタック対策）</div></div>
+            <div class="command-row"><span class="command-name">/prime</span><div class="command-desc">素数判定</div></div>
+            <div class="command-row"><span class="command-name">/sqrt</span><div class="command-desc">平方根の計算</div></div>
+            <div class="command-row"><span class="command-name">/rate</span><div class="command-desc">主要25ヶ国の為替レート</div></div>
+            <div class="command-row"><span class="command-name">/bmi</span><div class="command-desc">BMI健康チェック</div></div>
+            <div class="command-row"><span class="command-name">/keisan_time</span><div class="command-desc">時間計算</div></div>
+            <div class="command-row"><span class="command-name">/hajiki</span><div class="command-desc">速さ・時間・距離の計算</div></div>
         </section>
 
         <!-- 4. 遊び -->
-        <section id="games" class="category-block" style="border-top: 4px solid #00bfff;">
-            <h2 style="color: #00bfff; margin-bottom: 10px;">🎮 遊び</h2>
-            <p>サーバーのみんなでワイワイ楽しめるミニゲームコマンドです。</p>
-            
-            <div class="command-item" style="border-left-color: #00bfff;">
-                <strong>/janken</strong><br>
-                <span style="color: #555; font-size: 0.9em;">マイスちゃんと真剣勝負じゃんけん！</span>
+        <section id="games">
+            <h2 class="section-title">遊び</h2>
+            <div class="command-row">
+                <span class="command-name">/janken</span>
+                <div class="command-desc">マイスちゃんとじゃんけん勝負！</div>
             </div>
-            <div class="command-item" style="border-left-color: #00bfff;">
-                <strong>/hoi</strong><br>
-                <span style="color: #555; font-size: 0.9em;">あっち向いてホイ！</span>
+            <div class="command-row">
+                <span class="command-name">/hoi</span>
+                <div class="command-desc">あっち向いてホイ！</div>
             </div>
-            <div class="command-item" style="border-left-color: #00bfff;">
-                <strong>/guess</strong><br>
-                <span style="color: #555; font-size: 0.9em;">数字当てゲーム。難易度調整が可能です。</span>
+            <div class="command-row">
+                <span class="command-name">/guess</span>
+                <div class="command-desc">数字当てゲーム（難易度調整可能）</div>
             </div>
-            <div class="command-item" style="border-left-color: #00bfff; background: #f0faff;">
-                <strong>/agemaki</strong><br>
-                <span style="color: #555; font-size: 0.9em;">【新仕様】25マスの弾幕から1つだけ違う「激似絵文字」を30秒以内に探し出す一発勝負の間違い探しゲーム！お題は完全ランダム！</span>
+            <div class="command-row">
+                <span class="command-name">/agemaki</span>
+                <div class="command-desc">25マスの弾幕から1つだけ違う「激似絵文字」を30秒以内に探し出す、完全ランダムの一発勝負ゲーム！</div>
             </div>
         </section>
 
         <!-- 5. ネタ -->
-        <section id="jokes" class="category-block" style="border-top: 4px solid #9b5de5;">
-            <h2 style="color: #9b5de5; margin-bottom: 10px;">🤪 ネタ</h2>
-            <p>クスッと笑えるおもしろ機能です。</p>
-            
-            <div class="command-item" style="border-left-color: #9b5de5;">
-                <strong>/iei</strong><br>
-                <span style="color: #555; font-size: 0.9em;">遺影の画像生成。合掌。。。🙏</span>
+        <section id="jokes">
+            <h2 class="section-title">ネタ</h2>
+            <div class="command-row">
+                <span class="command-name">/iei</span>
+                <div class="command-desc">遺影の画像生成。合掌🙏</div>
             </div>
-            <div class="command-item" style="border-left-color: #9b5de5;">
-                <strong>/solt</strong><br>
-                <span style="color: #555; font-size: 0.9em;">塩振りおじさん召喚。お清めに(？)</span>
+            <div class="command-row">
+                <span class="command-name">/solt</span>
+                <div class="command-desc">塩振りおじさんをチャット欄に召喚！</div>
             </div>
-            <div class="command-item" style="border-left-color: #9b5de5;">
-                <strong>/koneta</strong><br>
-                <span style="color: #555; font-size: 0.9em;">botの小ネタ集。このコマンドでしか見られない秘密があるかも！？</span>
+            <div class="command-row">
+                <span class="command-name">/koneta</span>
+                <div class="command-desc">botの小ネタ集。このコマンドでしか見られない秘密があるかも…！？</div>
             </div>
         </section>
 
         <!-- 6. セキュリティ -->
-        <section id="security" class="category-block" style="border-top: 4px solid #ff0000;">
-            <h2 style="color: #ff0000; margin-bottom: 10px;">🛡️ セキュリティ</h2>
-            <p style="color: #666; font-size: 0.9em;">※以下のコマンドは管理者権限を持つユーザーのみ実行可能です。</p>
-            
-            <div class="command-item" style="border-left-color: #ff0000;">
-                <strong>/ban</strong><br>
-                <span style="color: #555; font-size: 0.9em;">ユーザーを垢BANします。</span>
+        <section id="security">
+            <h2 class="section-title">セキュリティ</h2>
+            <p style="color: #57606a; font-size: 13px; margin-bottom: 10px;">※管理者権限を持つユーザーのみ実行可能</p>
+            <div class="command-row">
+                <span class="command-name">/ban</span>
+                <div class="command-desc">荒らしユーザー等をサーバーから永久垢BANします。</div>
             </div>
-            <div class="command-item" style="border-left-color: #ff0000;">
-                <strong>/kick</strong><br>
-                <span style="color: #555; font-size: 0.9em;">ユーザーをキックします。</span>
+            <div class="command-row">
+                <span class="command-name">/kick</span>
+                <div class="command-desc">ユーザーをサーバーからキック（追放）します。</div>
             </div>
-            <div class="command-item" style="border-left-color: #ff0000;">
-                <strong>/timeout</strong><br>
-                <span style="color: #555; font-size: 0.9em;">ユーザーをタイムアウトします。</span>
+            <div class="command-row">
+                <span class="command-name">/timeout</span>
+                <div class="command-desc">指定したユーザーを一定時間タイムアウトします。</div>
             </div>
         </section>
 
         <!-- 7. その他 -->
-        <section id="others" class="category-block" style="border-top: 4px solid #7f8c8d;">
-            <h2 style="color: #7f8c8d; margin-bottom: 10px;">⚙️ その他</h2>
-            <p>便利なツールやシステム系の機能です。</p>
-            
-            <div class="command-item" style="border-left-color: #7f8c8d;">
-                <strong>/unicode</strong><br>
-                <span style="color: #555; font-size: 0.9em;">Unicode変換を行います。</span>
+        <section id="others">
+            <h2 class="section-title">その他</h2>
+            <div class="command-row">
+                <span class="command-name">/unicode</span>
+                <div class="command-desc">文字とUnicodeコードポイントの相互変換。</div>
             </div>
-            <div class="command-item" style="border-left-color: #7f8c8d;">
-                <strong>/translate</strong><br>
-                <span style="color: #555; font-size: 0.9em;">テキストを他言語翻訳。多言語対応かつ英語アタック対策におすすめ！</span>
+            <div class="command-row">
+                <span class="command-name">/translate</span>
+                <div class="command-desc">テキストを他言語翻訳（英語アタック対策におすすめ）。</div>
             </div>
-            <div class="command-item" style="border-left-color: #7f8c8d;">
-                <strong>/icon</strong><br>
-                <span style="color: #555; font-size: 0.9em;">このヘルプを表示。困ったときにどうぞ。</span>
+            <div class="command-row">
+                <span class="command-name">/icon</span>
+                <div class="command-desc">マイスちゃんの使い方ヘルプ・アイコン情報を表示。</div>
             </div>
-            <div class="command-item" style="border-left-color: #7f8c8d;">
-                <strong>/char</strong><br>
-                <span style="color: #555; font-size: 0.9em;">文字化けの解読と発生を行います。</span>
+            <div class="command-row">
+                <span class="command-name">/char</span>
+                <div class="command-desc">文字化けの発生、および怪しい文字化けテキストの自動解読。</div>
             </div>
         </section>
 
