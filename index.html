@@ -3,11 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>お助け！マイスちゃんbot！公式サイト</title>
+    <title>お助け！マイスちゃんbot！ - コマンド一覧</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* ページ全体のレイアウト（TakasumiBOT風Docsスタイル） */
+        .docs-container {
+            display: flex;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            gap: 30px;
+        }
+
+        /* 👈 左側：固定サイドナビゲーション */
+        .docs-sidebar {
+            width: 280px;
+            position: sticky;
+            top: 20px;
+            height: calc(100vh - 40px);
+            overflow-y: auto;
+            padding-right: 15px;
+            border-right: 1px solid #e1e4e8;
+        }
+
+        .sidebar-title {
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 15px;
+            padding-left: 10px;
+            font-weight: bold;
+        }
+
+        .sidebar-menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar-item {
+            margin-bottom: 5px;
+        }
+
+        .sidebar-link {
+            display: block;
+            padding: 12px 15px;
+            color: #444;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+
+        /* 各メニューホバー時のカラー */
+        .link-generator:hover { background: #f4f5ff; color: #5865f2; }
+        .link-kanji:hover { background: #fffbf0; color: #ffaa00; }
+        .link-calc:hover { background: #f5fcf6; color: #238636; }
+        .link-games:hover { background: #f0faff; color: #00bfff; }
+        .link-jokes:hover { background: #faf5ff; color: #9b5de5; }
+        .link-security:hover { background: #fff5f5; color: #ff0000; }
+        .link-others:hover { background: #f8f9fa; color: #7f8c8d; }
+
+        /* 👉 右側：メインコンテンツ領域 */
+        .docs-content {
+            flex: 1;
+            scroll-behavior: smooth;
+        }
+
+        /* 各カテゴリの大きなセクションブロック */
+        .category-section {
+            margin-bottom: 60px;
+            padding-top: 20px;
+        }
+
+        .category-header {
+            font-size: 1.8em;
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+            border-bottom: 3px solid #eee;
+        }
+
+        /* コマンドごとの詳しい解説カード */
+        .cmd-detail-card {
+            background: #fff;
+            border: 1px solid #e1e4e8;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+        }
+
+        .cmd-name {
+            font-size: 1.4em;
+            margin: 0 0 5px 0;
+            font-family: monospace;
+        }
+
+        .cmd-badge {
+            display: inline-block;
+            padding: 4px 10px;
+            font-size: 0.8em;
+            border-radius: 20px;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        /* コマンドの使い方・構文の黒いボックス */
+        .cmd-syntax {
+            background: #24292f;
+            color: #f6f8fa;
+            padding: 14px;
+            border-radius: 8px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.95em;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+
+        .cmd-label {
+            font-weight: bold;
+            color: #333;
+            margin-top: 15px;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        /* レスポンシブ（スマホ対応） */
+        @media (max-width: 768px) {
+            .docs-container { flex-direction: column; }
+            .docs-sidebar { width: 100%; position: static; height: auto; border-right: none; border-bottom: 1px solid #e1e4e8; padding-bottom: 20px; }
+        }
+    </style>
 </head>
 <body>
 
+<!-- 🧭 【復活】上部ナビゲーションバー -->
 <nav>
     <a href="index.html" class="nav-logo">
         <img src="img/bot_icon.png" alt="アイコン" class="nav-icon">
@@ -16,11 +145,11 @@
     <button class="menu-btn" id="menuBtn">☰</button>
 </nav>
 
-<!-- ここにメニューが流し込まれます -->
+<!-- 🧭 【復活】共通メニューファイル（nav.html）の読み込みエリア -->
 <div class="nav-links" id="navLinks"></div>
 
 <script>
-    // nav.htmlを読み込んで id="navLinks" に流し込む
+    // nav.html を自動で引っ張ってくるスクリプト
     fetch('nav.html')
         .then(response => response.text())
         .then(data => {
@@ -28,38 +157,136 @@
         });
 </script>
 
+<!-- 🖼️ 【復活】メインバナー画像エリア -->
 <header class="main-header">
+    <!-- ここにCSSの background-image などでバナー画像が表示されます -->
 </header>
 
-<div class="container">
-    <section>
-        <h2>このbotについて</h2>
-        <p>あなたのDiscordサーバーを少し便利にする多機能Botです。<br>計算、漢字でGO！に関する機能やジェネレーター、ちょっとしたお遊び機能を備えた、シンプルで使いやすく、それでいて痒いところに手が届く。そんなツールを目指して開発しています。<br>皆様に楽しく便利にご利用頂けたら幸いです。是非導入してみてはいかがでしょうか。</p>
-    </section>
-        <section>
-        <h2>マイスちゃんとは...？</h2>
-        <p>漢字でGO！のボーナスステージに出てくる美少女キャラクター。</p>
-    </section>
+<!-- 📂 メインコンテンツ（ここからTakasumiBOT風スタイル） -->
+<div class="docs-container">
 
-<section class="action-area">
-    <div class="button-group">
-        <!-- 招待ボタン -->
-        <a href="https://discord.com/oauth2/authorize?client_id=1477164306285068370&permissions=8&integration_type=0&scope=bot" class="btn-invite">
-            Discordに追加する
-        </a>
-        
-        <!-- サポートサーバーボタン（色を変えて区別） -->
-        <a href="https://discord.gg/4JU9Yky4Mw" class="btn-support">
-            サポートサーバーに参加
-        </a>
-    </div>
-</section>
+    <!-- 👈 左メニュー：クリックすると右側の特定位置にジャンプ -->
+    <aside class="docs-sidebar">
+        <div class="sidebar-title">目次 / カテゴリ</div>
+        <ul class="sidebar-menu">
+            <li class="sidebar-item"><a href="#generator" class="sidebar-link link-generator">👑 漢字でGO!ジェネレーター</a></li>
+            <li class="sidebar-item"><a href="#kanji" class="sidebar-link link-kanji">📙 漢字でGO!関連</a></li>
+            <li class="sidebar-item"><a href="#calculator" class="sidebar-link link-calc">📊 計算機能</a></li>
+            <li class="sidebar-item"><a href="#games" class="sidebar-link link-games">🎮 遊び機能</a></li>
+            <li class="sidebar-item"><a href="#jokes" class="sidebar-link link-jokes">🤪 ネタ機能</a></li>
+            <li class="sidebar-item"><a href="#security" class="sidebar-link link-security">🛡️ セキュリティ</a></li>
+            <li class="sidebar-item"><a href="#others" class="sidebar-link link-others">⚙️ その他</a></li>
+        </ul>
+    </aside>
+
+    <!-- 👉 右メニュー：詳しい解説を詰め込むエリア -->
+    <main class="docs-content">
+
+        <!-- ================= 1. ジェネレーター ================= -->
+        <section id="generator" class="category-section">
+            <h2 class="category-header" style="color: #5865f2; border-color: #5865f2;">👑 漢字でGO!ジェネレーター</h2>
+            
+            <div class="cmd-detail-card" style="border-left: 6px solid #5865f2;">
+                <h3 class="cmd-name">/generate</h3>
+                <span class="cmd-badge" style="background: #5865f2;">スラッシュコマンド</span>
+                <p style="color: #555;">本家『漢字でGO!』のクイズ画面にそっくりな問題画像を自動生成します。</p>
+                
+                <div class="cmd-syntax">/generate [メイン文字] [ルビ] [問題レベル]</div>
+                
+                <span class="cmd-label">💡 引数（パラメータ）の説明:</span>
+                <ul style="padding-left: 20px; color: #444;">
+                    <li><strong>メイン文字 (必須):</strong> 画面中央に大きく表示したい漢字や単語を入力します。</li>
+                    <li><strong>ルビ (任意):</strong> 漢字の上に振る小さな読みがなを指定します。</li>
+                    <li><strong>問題レベル (任意):</strong> 各UI（Level 1〜7、おに、地獄、絶望など）の枠線を切り替えます。</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ================= 2. 漢字でGO!関連 ================= -->
+        <section id="kanji" class="category-section">
+            <h2 class="category-header" style="color: #ffaa00; border-color: #ffaa00;">📙 漢字でGO!関連</h2>
+            
+            <div class="cmd-detail-card" style="border-left: 6px solid #ffaa00;">
+                <h3 class="cmd-name">/kanji-search</h3>
+                <span class="cmd-badge" style="background: #ffaa00;">スラッシュコマンド</span>
+                <p style="color: #555;">bot内のデータベースから、指定した漢字の情報を検索して表示します。</p>
+                <div class="cmd-syntax">/kanji-search [検索キーワード]</div>
+            </div>
+        </section>
+
+        <!-- ================= 3. 計算機能 ================= -->
+        <section id="calculator" class="category-section">
+            <h2 class="category-header" style="color: #238636; border-color: #238636;">📊 計算機能</h2>
+            
+            <div class="cmd-detail-card" style="border-left: 6px solid #238636;">
+                <h3 class="cmd-name">/calc</h3>
+                <span class="cmd-badge" style="background: #238636;">スラッシュコマンド</span>
+                <p style="color: #555;">数式を入力すると、botが瞬時に計算結果を返します。四則演算に対応。</p>
+                <div class="cmd-syntax">/calc [数式]</div>
+            </div>
+        </section>
+
+        <!-- ================= 4. 遊び機能 ================= -->
+        <section id="games" class="category-section">
+            <h2 class="category-header" style="color: #00bfff; border-color: #00bfff;">🎮 遊び機能</h2>
+            
+            <div class="cmd-detail-card" style="border-left: 6px solid #00bfff;">
+                <h3 class="cmd-name">/agemaki</h3>
+                <span class="cmd-badge" style="background: #00bfff;">ボタンインタラクション</span>
+                <p style="color: #555;">5×5マスのボタンを使って遊ぶ、激似絵文字間違い探しミニゲームです。</p>
+                
+                <div class="cmd-syntax">/agemaki</div>
+                
+                <span class="cmd-label">📝 ゲーム詳細ルール:</span>
+                <ul style="padding-left: 20px; color: #444;">
+                    <li>画面に表示される25個のボタンのうち、24個は「ダミー」、1個だけが「本物の正解」です。</li>
+                    <li>制限時間は<strong>30秒</strong>！一発勝負の完全独立ゲームです。</li>
+                    <li>お題となる絵文字のペアは、プール内から毎回<strong>完全ランダム</strong>で抽選されます。</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ================= 5. ネタ機能 ================= -->
+        <section id="jokes" class="category-section">
+            <h2 class="category-header" style="color: #9b5de5; border-color: #9b5de5;">🤪 ネタ機能</h2>
+            <div class="cmd-detail-card" style="border-left: 6px solid #9b5de5;">
+                <h3 class="cmd-name">/fortune</h3>
+                <span class="cmd-badge" style="background: #9b5de5;">スラッシュコマンド</span>
+                <p style="color: #555;">今日の運勢をマイスちゃんがユニークに占ってくれます。</p>
+                <div class="cmd-syntax">/fortune</div>
+            </div>
+        </section>
+
+        <!-- ================= 6. セキュリティ ================= -->
+        <section id="security" class="category-section">
+            <h2 class="category-header" style="color: #ff0000; border-color: #ff0000;">🛡️ セキュリティ</h2>
+            <div class="cmd-detail-card" style="border-left: 6px solid #ff0000;">
+                <h3 class="cmd-name">/kick</h3>
+                <span class="cmd-badge" style="background: #ff0000;">管理者専用</span>
+                <p style="color: #555;">指定したユーザーをサーバーからキックします（※管理権限が必要です）。</p>
+                <div class="cmd-syntax">/kick [ユーザー名] [理由]</div>
+            </div>
+        </section>
+
+        <!-- ================= 7. その他 ================= -->
+        <section id="others" class="category-section">
+            <h2 class="category-header" style="color: #7f8c8d; border-color: #7f8c8d;">⚙️ その他</h2>
+            <div class="cmd-detail-card" style="border-left: 6px solid #7f8c8d;">
+                <h3 class="cmd-name">/help</h3>
+                <span class="cmd-badge" style="background: #7f8c8d;">通常コマンド</span>
+                <p style="color: #555;">botの基本的な使い方や、この公式ウェブサイトへのリンクを表示します。</p>
+                <div class="cmd-syntax">/help</div>
+            </div>
+        </section>
+
+    </main>
 </div>
 
 <footer>
     <p>&copy; 2026 㐅メ夕タ (Itsutsume Yuta)</p>
 </footer>
 
+<!-- 📱 スマホ用ハンバーガーメニュー切り替え用のJavaScript（これも復活） -->
 <script>
     const menuBtn = document.getElementById('menuBtn');
     const navLinks = document.getElementById('navLinks');
@@ -77,6 +304,5 @@
         }
     });
 </script>
-
 </body>
 </html>
