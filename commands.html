@@ -31,6 +31,7 @@
             color: #555;
             margin-bottom: 15px;
             padding-left: 10px;
+            font-weight: bold;
         }
 
         .sidebar-menu {
@@ -53,7 +54,7 @@
             transition: all 0.2s ease;
         }
 
-        /* 各メニューホバー時のカラー（前回の配色をベースに） */
+        /* 各メニューホバー時のカラー */
         .link-generator:hover { background: #f4f5ff; color: #5865f2; }
         .link-kanji:hover { background: #fffbf0; color: #ffaa00; }
         .link-calc:hover { background: #f5fcf6; color: #238636; }
@@ -65,13 +66,13 @@
         /* 👉 右側：メインコンテンツ領域 */
         .docs-content {
             flex: 1;
-            scroll-behavior: smooth; /* スクロールを滑らかにする */
+            scroll-behavior: smooth;
         }
 
         /* 各カテゴリの大きなセクションブロック */
         .category-section {
             margin-bottom: 60px;
-            padding-top: 20px; /* スクロール位置の微調整用 */
+            padding-top: 20px;
         }
 
         .category-header {
@@ -135,13 +136,33 @@
 </head>
 <body>
 
+<!-- 🧭 【復活】上部ナビゲーションバー -->
 <nav>
     <a href="index.html" class="nav-logo">
         <img src="img/bot_icon.png" alt="アイコン" class="nav-icon">
         お助け！マイスちゃんbot！
     </a>
+    <button class="menu-btn" id="menuBtn">☰</button>
 </nav>
 
+<!-- 🧭 【復活】共通メニューファイル（nav.html）の読み込みエリア -->
+<div class="nav-links" id="navLinks"></div>
+
+<script>
+    // nav.html を自動で引っ張ってくるスクリプト
+    fetch('nav.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('navLinks').innerHTML = data;
+        });
+</script>
+
+<!-- 🖼️ 【復活】メインバナー画像エリア -->
+<header class="main-header">
+    <!-- ここにCSSの background-image などでバナー画像が表示されます -->
+</header>
+
+<!-- 📂 メインコンテンツ（ここからTakasumiBOT風スタイル） -->
 <div class="docs-container">
 
     <!-- 👈 左メニュー：クリックすると右側の特定位置にジャンプ -->
@@ -265,5 +286,23 @@
     <p>&copy; 2026 㐅メ夕タ (Itsutsume Yuta)</p>
 </footer>
 
+<!-- 📱 スマホ用ハンバーガーメニュー切り替え用のJavaScript（これも復活） -->
+<script>
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+
+    menuBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        navLinks.classList.toggle('active');
+        menuBtn.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!navLinks.contains(e.target) && navLinks.classList.contains('active')) {
+            navLinks.classList.remove('active');
+            menuBtn.textContent = '☰';
+        }
+    });
+</script>
 </body>
 </html>
