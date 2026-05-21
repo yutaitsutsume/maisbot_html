@@ -5,19 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>お助け！マイスちゃんbot！ - コマンド一覧</title>
     <link rel="stylesheet" href="style.css">
-    <!-- 💡 この <style> から </style> までを全部消す！ -->
-<style>
-    /* ページ全体のレイアウト（TakasumiBOT風Docsスタイル） */
-    .docs-container {
-        display: flex;
-        ...
-    }
-    ...
-</style>
 </head>
 <body>
 
-<!-- 🧭 【復活】上部ナビゲーションバー -->
+<!-- 🧭 上部ナビゲーションバー -->
 <nav>
     <a href="index.html" class="nav-logo">
         <img src="img/bot_icon.png" alt="アイコン" class="nav-icon">
@@ -26,7 +17,7 @@
     <button class="menu-btn" id="menuBtn">☰</button>
 </nav>
 
-<!-- 🧭 【復活】共通メニューファイル（nav.html）の読み込みエリア -->
+<!-- 🧭 共通メニューファイル（nav.html）の読み込みエリア -->
 <div class="nav-links" id="navLinks"></div>
 
 <script>
@@ -38,12 +29,12 @@
         });
 </script>
 
-<!-- 🖼️ 【復活】メインバナー画像エリア -->
+<!-- 🖼️ メインバナー画像エリア -->
 <header class="main-header">
     <!-- ここにCSSの background-image などでバナー画像が表示されます -->
 </header>
 
-<!-- 📂 メインコンテンツ（ここからTakasumiBOT風スタイル） -->
+<!-- 📂 メインコンテンツ（TakasumiBOT風スタイル） -->
 <div class="docs-container">
 
     <!-- 👈 左メニュー：クリックすると右側の特定位置にジャンプ -->
@@ -120,7 +111,7 @@
                 
                 <span class="cmd-label">📝 ゲーム詳細ルール:</span>
                 <ul style="padding-left: 20px; color: #444;">
-                    <li>画面に表示される25個のボタンのうち、24個は「ダミー」、1個だけが「本物の正解」です。</li>
+                    <li>画面に表示される25個のボタンのうち、24個は「ダミー nudge」、1個だけが「本物の正解」です。</li>
                     <li>制限時間は<strong>30秒</strong>！一発勝負の完全独立ゲームです。</li>
                     <li>お題となる絵文字のペアは、プール内から毎回<strong>完全ランダム</strong>で抽選されます。</li>
                 </ul>
@@ -155,7 +146,7 @@
             <div class="cmd-detail-card" style="border-left: 6px solid #7f8c8d;">
                 <h3 class="cmd-name">/unicode</h3>
                 <span class="cmd-badge" style="background: #7f8c8d;">スラッシュコマンド</span>
-                <p style="color: #555;">テキストをunicode変換します。</p>
+                <p style="color: #555;">テキストをUnicodeコードポイント（U+xxxx）に変換、またはその逆の変換を行います。超難読漢字や特殊文字のID検索に便利です。</p>
                 <div class="cmd-syntax">/unicode mode:🔤 文字 → Unicode (U+xxxx) text: 𱁬</div>
             </div>
             <div class="cmd-detail-card" style="border-left: 6px solid #7f8c8d;">
@@ -173,7 +164,7 @@
     <p>&copy; 2026 㐅メ夕タ (Itsutsume Yuta)</p>
 </footer>
 
-<!-- 📱 スマホ用ハンバーガーメニュー切り替え用のJavaScript（これも復活） -->
+<!-- 📱 スマホ用ハンバーガーメニュー切り替え用のJavaScript -->
 <script>
     const menuBtn = document.getElementById('menuBtn');
     const navLinks = document.getElementById('navLinks');
