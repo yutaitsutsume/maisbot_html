@@ -67,7 +67,7 @@
                 </div>
                 <div class="cmd-syntax">/kango_seisei 漢字: 漢字前: 漢字後: ルビ: カラー: 文字数指定: ジャンル: 問題番号:</div>
                 
-                <span class="cmd-label">💡 引数（パラメータ）の説明</span>
+                <span class="cmd-label">使い方</span>
                 <ul style="padding-left: 20px; color: #444;">
                     <li><strong>漢字(必須):</strong> 画面中央に大きく表示したい漢字や単語を入力します。</li>
                     <li><strong>漢字前・漢字後:</strong> 漢字の上に振る小さな読みがなを指定します。</li>
@@ -77,11 +77,21 @@
                     <li><strong>ジャンル:</strong> 本家同様に、動物、植物・藻類、地名・建造物等が選択できます。</li>
                     <li><strong>問題番号:</strong> 保存されるときにファイル名に反映されます。</li>
                 </ul>
+                <span class="cmd-label">使用フォント</span>
+                <ul style="padding-left: 20px; color: #444;">
+                    <li><strong>メインフォント</strong> セイビタカナワ(B)※有料フォント</li>
+                    <li><strong>ルビ用フォント</strong> Noto Sans JP Bold</li>
+                </ul>
+                <span class="cmd-label">使用可能文字</span>
+                <ul style="padding-left: 20px; color: #444;">
+                    <li><strong>全角：</strong> 非漢字、JIS第一水準、JIS第二水準、JIS第三水準とJIS第四水準、水準外から一部</li>
+                    <li><strong>半角：</strong> ローマ字、半角カナ</li>
+                </ul>
             </div>
             <div class="cmd-detail-card" style="border-left: 6px solid #5865f2;">
                 <h3 class="cmd-name">/kango_seisei_id</h3>
                 <span class="cmd-badge" style="background: #5865f2;">スラッシュコマンド</span>
-                <p style="color: #555;">ID指定による漢字でGO！の問題生成をします。固有のレベルとIDを入力して、本家同様の問題をそのまま生成できます。</p>
+                <p style="color: #555;">ID指定による漢字でGO！の問題生成をします。固有のレベルとIDを入力して、本家同様の問題をそのまま生成できます。unicordに未登録文字でも本家に登録されていれば、生成可能です。</p>
                 
                 <div class="cmd-syntax">/kango_seisei_id レベル: id:</div>
             </div>
@@ -215,10 +225,17 @@
             <div class="cmd-detail-card" style="border-left: 6px solid #9b5de5;">
                 <h3 class="cmd-name">/5000</h3>
                 <span class="cmd-badge" style="background: #9b5de5;">スラッシュコマンド</span>
-                <p style="color: #555;">5000兆円ジェネレーター。5000兆円欲しいときに(？)どうぞ。</p>
+                <p style="color: #555;">5000兆円ジェネレーター。5000兆円欲しいときに(？)どうぞ。対応文字は漢GOジェネレーターより多い！成功すると以下の画像の通りになります。</p>
                 <div class="cmd-syntax">/5000 top: bottom: noalpha: rainbow:</div>
                 <div class="cmd-preview" style="margin-top: 15px;">
                     <img src="img/5000.png" alt="/5000の実行例" style="max-width: 100%; height: auto; border-radius: 6px; border: 1px solid #e1e4e8;">
+                <span class="cmd-label">使い方</span>
+                <ul style="padding-left: 20px; color: #444;">
+                    <li><strong>top:</strong> 上の文字を入力します。</li>
+                    <li><strong>bottom:</strong> 下の文字を入力します。</li>
+                    <li><strong>noalpha:</strong> 背景を透過させるかさせないかを選択できます。</li>
+                    <li><strong>rainbow:</strong> 選択すると上の字の縁取りと、下の字の色が虹色になります。</li>
+                </ul>
                 </div>
             </div>
             <div class="cmd-detail-card" style="border-left: 6px solid #9b5de5;">
