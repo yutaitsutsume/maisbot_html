@@ -303,3 +303,30 @@ footer { text-align: center; padding: 60px 20px; color: #999; border-top: 1px so
         padding-bottom: 20px; 
     }
 }
+/* 漢字でGO!ジェネレーター（例：ゴールド／オレンジ系） */
+.sidebar-link.link-generator { color: #d4af37; }
+.sidebar-link.link-generator:hover { color: #aa8c2c; }
+
+/* 漢字でGO!関連（例：ブルー系） */
+.sidebar-link.link-kanji { color: #0077b6; }
+.sidebar-link.link-kanji:hover { color: #005682; }
+
+/* 計算機能（例：グリーン系） */
+.sidebar-link.link-calc { color: #2a9d8f; }
+.sidebar-link.link-calc:hover { color: #1f7469; }
+
+/* 遊び機能（例：パープル系 - さっきの /5000 みたいな色） */
+.sidebar-link.link-games { color: #9b5de5; }
+.sidebar-link.link-games:hover { color: #7b3dbd; }
+
+/* ネタ機能（例：ピンク／レッド系） */
+.sidebar-link.link-jokes { color: #f15bb5; }
+.sidebar-link.link-jokes:hover { color: #c83b93; }
+
+/* セキュリティ（例：ダークグレー／シールド系） */
+.sidebar-link.link-security { color: #2b2d42; }
+.sidebar-link.link-security:hover { color: #1d1e2c; }
+
+/* その他（例：ライトグレー系） */
+.sidebar-link.link-others { color: #6c757d; }
+.sidebar-link.link-others:hover { color: #495057; }
