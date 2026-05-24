@@ -41,13 +41,13 @@
     <aside class="docs-sidebar">
         <div class="sidebar-title">目次 / カテゴリ</div>
         <ul class="sidebar-menu">
-            <li class="sidebar-item"><a href="#generator" class="sidebar-link link-generator">👑 漢字でGO!ジェネレーター</a></li>
-            <li class="sidebar-item"><a href="#kanji" class="sidebar-link link-kanji">📙 漢字でGO!関連</a></li>
-            <li class="sidebar-item"><a href="#calculator" class="sidebar-link link-calc">📊 計算機能</a></li>
-            <li class="sidebar-item"><a href="#games" class="sidebar-link link-games">🎮 遊び機能</a></li>
-            <li class="sidebar-item"><a href="#jokes" class="sidebar-link link-jokes">🤪 ネタ機能</a></li>
-            <li class="sidebar-item"><a href="#security" class="sidebar-link link-security">🛡️ セキュリティ</a></li>
-            <li class="sidebar-item"><a href="#others" class="sidebar-link link-others">⚙️ その他</a></li>
+            <li class="sidebar-item"><a href="#generator" class="sidebar-link link-generator">漢字でGO!ジェネレーター</a></li>
+            <li class="sidebar-item"><a href="#kanji" class="sidebar-link link-kanji">漢字でGO!関連</a></li>
+            <li class="sidebar-item"><a href="#calculator" class="sidebar-link link-calc">計算機能</a></li>
+            <li class="sidebar-item"><a href="#games" class="sidebar-link link-games">遊び機能</a></li>
+            <li class="sidebar-item"><a href="#jokes" class="sidebar-link link-jokes">ネタ機能</a></li>
+            <li class="sidebar-item"><a href="#security" class="sidebar-link link-security">セキュリティ</a></li>
+            <li class="sidebar-item"><a href="#others" class="sidebar-link link-others">その他</a></li>
         </ul>
     </aside>
 
@@ -59,7 +59,25 @@
             <h2 class="category-header" style="color: #5865f2; border-color: #5865f2;">漢字でGO!ジェネレーター</h2>
             
             <div class="cmd-detail-card" style="border-left: 6px solid #5865f2;">
-                <h3 class="cmd-name">/generate</h3>
+                <h3 class="cmd-name">/kango_seisei</h3>
+                <span class="cmd-badge" style="background: #5865f2;">スラッシュコマンド</span>
+                <p style="color: #555;">本家『漢字でGO!』のクイズ画面にそっくりな問題画像を自動生成します。</p>
+                
+                <div class="cmd-syntax">/seisei 漢字: 漢字前: 漢字後: ルビ: カラー: 文字数指定: ジャンル: 問題番号:</div>
+                
+                <span class="cmd-label">💡 引数（パラメータ）の説明</span>
+                <ul style="padding-left: 20px; color: #444;">
+                    <li><strong>漢字(必須):</strong> 画面中央に大きく表示したい漢字や単語を入力します。</li>
+                    <li><strong>漢字前:</strong> 漢字の上に振る小さな読みがなを指定します。</li>
+                    <li><strong>漢字後:</strong> 各UI（Level 1〜7、おに、地獄、絶望など）の枠線を切り替えます。</li>
+                    <li><strong>漢字前:</strong> 漢字の上に振る小さな読みがなを指定します。</li>
+                    <li><strong>漢字後:</strong> 各UI（Level 1〜7、おに、地獄、絶望など）の枠線を切り替えます。</li>
+                    <li><strong>漢字前:</strong> 漢字の上に振る小さな読みがなを指定します。</li>
+                    <li><strong>漢字後:</strong> 各UI（Level 1〜7、おに、地獄、絶望など）の枠線を切り替えます。</li>
+                </ul>
+            </div>
+            <div class="cmd-detail-card" style="border-left: 6px solid #5865f2;">
+                <h3 class="cmd-name">/kango_seisei_id</h3>
                 <span class="cmd-badge" style="background: #5865f2;">スラッシュコマンド</span>
                 <p style="color: #555;">本家『漢字でGO!』のクイズ画面にそっくりな問題画像を自動生成します。</p>
                 
@@ -79,10 +97,16 @@
             <h2 class="category-header" style="color: #ffaa00; border-color: #ffaa00;">漢字でGO!関連</h2>
             
             <div class="cmd-detail-card" style="border-left: 6px solid #ffaa00;">
-                <h3 class="cmd-name">/kanji-search</h3>
+                <h3 class="cmd-name">/database</h3>
                 <span class="cmd-badge" style="/database: #ffaa00;">スラッシュコマンド</span>
-                <p style="color: #555;">攻略用データベースを表示します。</p>
-                <div class="cmd-syntax">/kanji-search [検索キーワード]</div>
+                <p style="color: #555;">漢字でGO！の攻略用データベースのリンクを表示します。</p>
+                <div class="cmd-syntax">/database</div>
+            </div>
+            <div class="cmd-detail-card" style="border-left: 6px solid #ffaa00;">
+                <h3 class="cmd-name">/go_power</h3>
+                <span class="cmd-badge" style="/database: #ffaa00;">スラッシュコマンド</span>
+                <p style="color: #555;">GOパワー・称号の確認をします。次の称号まであとどれぐらいかだけでなく、あと何回プレイすればの目安も分かります。</p>
+                <div class="cmd-syntax">/go_power　value: </div>
             </div>
         </section>
 
@@ -93,61 +117,61 @@
             <div class="cmd-detail-card" style="border-left: 6px solid #238636;">
                 <h3 class="cmd-name">/average</h3>
                 <span class="cmd-badge" style="background: #238636;">スラッシュコマンド</span>
-                <p style="color: #555;">数式を入力すると、botが瞬時に計算結果を返します。四則演算に対応。</p>
+                <p style="color: #555;">平均値の計算をします。</p>
                 <div class="cmd-syntax">/calc [数式]</div>
             </div>
             <div class="cmd-detail-card" style="border-left: 6px solid #238636;">
                 <h3 class="cmd-name">/convert</h3>
                 <span class="cmd-badge" style="background: #238636;">スラッシュコマンド</span>
-                <p style="color: #555;">数式を入力すると、botが瞬時に計算結果を返します。四則演算に対応。</p>
+                <p style="color: #555;">単位換算をします。</p>
                 <div class="cmd-syntax">/calc [数式]</div>
             </div>
             <div class="cmd-detail-card" style="border-left: 6px solid #238636;">
                 <h3 class="cmd-name">/keisan</h3>
                 <span class="cmd-badge" style="background: #238636;">スラッシュコマンド</span>
-                <p style="color: #555;">数式を入力すると、botが瞬時に計算結果を返します。四則演算に対応。</p>
+                <p style="color: #555;">数式・方程式の計算をします。数字アタック対策にどうぞご利用ください。</p>
                 <div class="cmd-syntax">/calc [数式]</div>
             </div>
             <div class="cmd-detail-card" style="border-left: 6px solid #238636;">
                 <h3 class="cmd-name">/prime</h3>
                 <span class="cmd-badge" style="background: #238636;">スラッシュコマンド</span>
-                <p style="color: #555;">数式を入力すると、botが瞬時に計算結果を返します。四則演算に対応。</p>
+                <p style="color: #555;">素数判定をします。素因数分解もします。</p>
                 <div class="cmd-syntax">/calc [数式]</div>
             </div>
             <div class="cmd-detail-card" style="border-left: 6px solid #238636;">
                 <h3 class="cmd-name">/sqrt</h3>
                 <span class="cmd-badge" style="background: #238636;">スラッシュコマンド</span>
-                <p style="color: #555;">数式を入力すると、botが瞬時に計算結果を返します。四則演算に対応。</p>
+                <p style="color: #555;">平方根の計算をします。/p>
                 <div class="cmd-syntax">/calc [数式]</div>
             </div>
             <div class="cmd-detail-card" style="border-left: 6px solid #238636;">
                 <h3 class="cmd-name">/rate</h3>
                 <span class="cmd-badge" style="background: #238636;">スラッシュコマンド</span>
-                <p style="color: #555;">数式を入力すると、botが瞬時に計算結果を返します。四則演算に対応。</p>
+                <p style="color: #555;">主要25ヶ国の為替レート</p>
                 <div class="cmd-syntax">/calc [数式]</div>
             </div>
             <div class="cmd-detail-card" style="border-left: 6px solid #238636;">
                 <h3 class="cmd-name">/bmi</h3>
                 <span class="cmd-badge" style="background: #238636;">スラッシュコマンド</span>
-                <p style="color: #555;">数式を入力すると、botが瞬時に計算結果を返します。四則演算に対応。</p>
+                <p style="color: #555;">BMI計算をします。</p>
                 <div class="cmd-syntax">/calc [数式]</div>
             </div>
             <div class="cmd-detail-card" style="border-left: 6px solid #238636;">
                 <h3 class="cmd-name">/keisan_time</h3>
                 <span class="cmd-badge" style="background: #238636;">スラッシュコマンド</span>
-                <p style="color: #555;">数式を入力すると、botが瞬時に計算結果を返します。四則演算に対応。</p>
+                <p style="color: #555;">時間計算をします。</p>
                 <div class="cmd-syntax">/calc [数式]</div>
             </div>
             <div class="cmd-detail-card" style="border-left: 6px solid #238636;">
                 <h3 class="cmd-name">/hajiki</h3>
                 <span class="cmd-badge" style="background: #238636;">スラッシュコマンド</span>
-                <p style="color: #555;">数式を入力すると、botが瞬時に計算結果を返します。四則演算に対応。</p>
+                <p style="color: #555;">速さ・時間・距離の計算をします。</p>
                 <div class="cmd-syntax">/calc [数式]</div>
             </div>
             <div class="cmd-detail-card" style="border-left: 6px solid #238636;">
                 <h3 class="cmd-name">/range</h3>
                 <span class="cmd-badge" style="background: #238636;">スラッシュコマンド</span>
-                <p style="color: #555;">数式を入力すると、botが瞬時に計算結果を返します。四則演算に対応。</p>
+                <p style="color: #555;">電子レンジ加熱時間の計算をします。冷凍食品等を温めたいときにどうぞ。</p>
                 <div class="cmd-syntax">/calc [数式]</div>
             </div>
         </section>
@@ -163,7 +187,7 @@
                 
                 <div class="cmd-syntax">/agemaki</div>
                 
-                <span class="cmd-label">📝 ゲーム詳細ルール:</span>
+                <span class="cmd-label">📝 ゲーム詳細ルール</span>
                 <ul style="padding-left: 20px; color: #444;">
                     <li>画面に表示される25個のボタンのうち、24個は「ダミー nudge」、1個だけが「本物の正解」です。</li>
                     <li>制限時間は<strong>30秒</strong>！一発勝負の完全独立ゲームです。</li>
@@ -287,7 +311,7 @@
             <div class="cmd-detail-card" style="border-left: 6px solid #7f8c8d;">
                 <h3 class="cmd-name">/world_time</h3>
                 <span class="cmd-badge" style="background: #7f8c8d;">スラッシュコマンド</span>
-                <p style="color: #555;">世界時計を表示します。「city」は任意で選択可能で、未選択はあなたのいる場所の時間が表示されます。</p>
+                <p style="color: #555;">世界時計を表示します。「city」は任意で選択可能で、未選択であなたのいる場所の時間が表示されます。</p>
                 <div class="cmd-syntax">/world_time city:</div>
             </div>
             <div class="cmd-detail-card" style="border-left: 6px solid #7f8c8d;">
