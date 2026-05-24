@@ -323,9 +323,9 @@ footer { text-align: center; padding: 60px 20px; color: #999; border-top: 1px so
 .sidebar-link.link-jokes { color: #f15bb5; }
 .sidebar-link.link-jokes:hover { color: #c83b93; }
 
-/* セキュリティ（例：ダークグレー／シールド系） */
-.sidebar-link.link-security { color: #2b2d42; }
-.sidebar-link.link-security:hover { color: #1d1e2c; }
+/* セキュリティ */
+.sidebar-link.link-security { color: #ff0000; }
+.sidebar-link.link-security:hover { color: #ff0000; }
 
 /* その他（例：ライトグレー系） */
 .sidebar-link.link-others { color: #6c757d; }
